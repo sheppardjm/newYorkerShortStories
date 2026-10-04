@@ -1,0 +1,529 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-04T16:20:01+00:00",
+  "title": "Design System: New Yorker Fiction by Length",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "primary",
+        "displayName": "Signage Black",
+        "canonical": "#111111",
+        "cssVar": "--ink",
+        "tonalRamp": [
+          "oklch(15% 0.000 90)",
+          "oklch(26% 0.000 90)",
+          "oklch(38% 0.000 90)",
+          "oklch(49% 0.000 90)",
+          "oklch(61% 0.000 90)",
+          "oklch(72% 0.000 90)",
+          "oklch(84% 0.000 90)",
+          "oklch(95% 0.000 90)"
+        ],
+        "aliases": [
+          "--band",
+          "--rule-strong"
+        ]
+      },
+      "ground": {
+        "role": "neutral",
+        "displayName": "Platform White",
+        "canonical": "#ffffff",
+        "cssVar": "--ground",
+        "tonalRamp": [
+          "oklch(15% 0.000 90)",
+          "oklch(26% 0.000 90)",
+          "oklch(38% 0.000 90)",
+          "oklch(49% 0.000 90)",
+          "oklch(61% 0.000 90)",
+          "oklch(72% 0.000 90)",
+          "oklch(84% 0.000 90)",
+          "oklch(95% 0.000 90)"
+        ],
+        "aliases": [
+          "--band-ink"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Station Grey",
+        "canonical": "#4a4a4a",
+        "cssVar": "--ink-2",
+        "tonalRamp": [
+          "oklch(15% 0.000 90)",
+          "oklch(26% 0.000 90)",
+          "oklch(38% 0.000 90)",
+          "oklch(49% 0.000 90)",
+          "oklch(61% 0.000 90)",
+          "oklch(72% 0.000 90)",
+          "oklch(84% 0.000 90)",
+          "oklch(95% 0.000 90)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Hairline Grey",
+        "canonical": "#d6d6d6",
+        "cssVar": "--rule",
+        "tonalRamp": [
+          "oklch(15% 0.000 90)",
+          "oklch(26% 0.000 90)",
+          "oklch(38% 0.000 90)",
+          "oklch(49% 0.000 90)",
+          "oklch(61% 0.000 90)",
+          "oklch(72% 0.000 90)",
+          "oklch(84% 0.000 90)",
+          "oklch(95% 0.000 90)"
+        ]
+      },
+      "band-ink-2": {
+        "role": "neutral",
+        "displayName": "Band Grey",
+        "canonical": "#bdbdbd",
+        "cssVar": "--band-ink-2",
+        "tonalRamp": [
+          "oklch(15% 0.000 90)",
+          "oklch(26% 0.000 90)",
+          "oklch(38% 0.000 90)",
+          "oklch(49% 0.000 90)",
+          "oklch(61% 0.000 90)",
+          "oklch(72% 0.000 90)",
+          "oklch(84% 0.000 90)",
+          "oklch(95% 0.000 90)"
+        ]
+      },
+      "hover": {
+        "role": "neutral",
+        "displayName": "Hover Grey",
+        "canonical": "#f3f3f3",
+        "cssVar": "--hover",
+        "tonalRamp": [
+          "oklch(15% 0.000 90)",
+          "oklch(26% 0.000 90)",
+          "oklch(38% 0.000 90)",
+          "oklch(49% 0.000 90)",
+          "oklch(61% 0.000 90)",
+          "oklch(72% 0.000 90)",
+          "oklch(84% 0.000 90)",
+          "oklch(95% 0.000 90)"
+        ]
+      },
+      "focus": {
+        "role": "tertiary",
+        "displayName": "Signal Blue",
+        "canonical": "#0039a6",
+        "cssVar": "--focus",
+        "tonalRamp": [
+          "oklch(15% 0.133 262)",
+          "oklch(26% 0.156 262)",
+          "oklch(38% 0.179 262)",
+          "oklch(49% 0.163 262)",
+          "oklch(61% 0.140 262)",
+          "oklch(72% 0.117 262)",
+          "oklch(84% 0.094 262)",
+          "oklch(95% 0.060 262)"
+        ]
+      },
+      "line-1": {
+        "role": "secondary",
+        "displayName": "Lexington Red (under 5 min)",
+        "canonical": "#ee352e",
+        "cssVar": "--l1",
+        "tonalRamp": [
+          "oklch(15% 0.107 28)",
+          "oklch(26% 0.135 28)",
+          "oklch(38% 0.162 28)",
+          "oklch(49% 0.190 28)",
+          "oklch(61% 0.218 28)",
+          "oklch(72% 0.196 28)",
+          "oklch(84% 0.169 28)",
+          "oklch(95% 0.060 28)"
+        ]
+      },
+      "line-2": {
+        "role": "secondary",
+        "displayName": "Sixth Avenue Orange (5-10 min)",
+        "canonical": "#f96016",
+        "cssVar": "--l2",
+        "tonalRamp": [
+          "oklch(15% 0.082 41)",
+          "oklch(26% 0.108 41)",
+          "oklch(38% 0.134 41)",
+          "oklch(49% 0.159 41)",
+          "oklch(61% 0.185 41)",
+          "oklch(72% 0.198 41)",
+          "oklch(84% 0.172 41)",
+          "oklch(95% 0.060 41)"
+        ]
+      },
+      "line-3": {
+        "role": "secondary",
+        "displayName": "Broadway Yellow (10-20 min)",
+        "canonical": "#fccc0a",
+        "cssVar": "--l3",
+        "tonalRamp": [
+          "oklch(15% 0.044 91)",
+          "oklch(26% 0.060 91)",
+          "oklch(38% 0.082 91)",
+          "oklch(49% 0.104 91)",
+          "oklch(61% 0.126 91)",
+          "oklch(72% 0.148 91)",
+          "oklch(84% 0.170 91)",
+          "oklch(95% 0.060 91)"
+        ]
+      },
+      "line-4": {
+        "role": "secondary",
+        "displayName": "Crosstown Green (20-30 min)",
+        "canonical": "#00933c",
+        "cssVar": "--l4",
+        "tonalRamp": [
+          "oklch(15% 0.087 149)",
+          "oklch(26% 0.108 149)",
+          "oklch(38% 0.129 149)",
+          "oklch(49% 0.150 149)",
+          "oklch(61% 0.160 149)",
+          "oklch(72% 0.139 149)",
+          "oklch(84% 0.118 149)",
+          "oklch(95% 0.060 149)"
+        ]
+      },
+      "line-5": {
+        "role": "secondary",
+        "displayName": "Eighth Avenue Blue (30-45 min)",
+        "canonical": "#0039a6",
+        "cssVar": "--l5",
+        "tonalRamp": [
+          "oklch(15% 0.133 262)",
+          "oklch(26% 0.156 262)",
+          "oklch(38% 0.179 262)",
+          "oklch(49% 0.163 262)",
+          "oklch(61% 0.140 262)",
+          "oklch(72% 0.117 262)",
+          "oklch(84% 0.094 262)",
+          "oklch(95% 0.060 262)"
+        ]
+      },
+      "line-6": {
+        "role": "secondary",
+        "displayName": "Flushing Purple (45+ min)",
+        "canonical": "#b933ad",
+        "cssVar": "--l6",
+        "tonalRamp": [
+          "oklch(15% 0.116 332)",
+          "oklch(26% 0.142 332)",
+          "oklch(38% 0.169 332)",
+          "oklch(49% 0.196 332)",
+          "oklch(61% 0.205 332)",
+          "oklch(72% 0.178 332)",
+          "oklch(84% 0.151 332)",
+          "oklch(95% 0.060 332)"
+        ]
+      },
+      "line-0": {
+        "role": "secondary",
+        "displayName": "Shuttle Grey (length unknown)",
+        "canonical": "#808183",
+        "cssVar": "--l0",
+        "tonalRamp": [
+          "oklch(15% 0.003 265)",
+          "oklch(26% 0.003 265)",
+          "oklch(38% 0.003 265)",
+          "oklch(49% 0.003 265)",
+          "oklch(61% 0.003 265)",
+          "oklch(72% 0.003 265)",
+          "oklch(84% 0.003 265)",
+          "oklch(95% 0.003 265)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Masthead title only, white on the black band."
+      },
+      "station": {
+        "displayName": "Station",
+        "purpose": "The word \"Today\" in the Today panel."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Picked story title in the Today panel."
+      },
+      "standfirst": {
+        "displayName": "Standfirst",
+        "purpose": "One-line explanation under the masthead title, max 70ch."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Stop-row story title; 17px under 640px."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Base text; deks 15px/1.45 grey max 68ch; footer 14px/1.55."
+      },
+      "meta": {
+        "displayName": "Meta",
+        "purpose": "Bylines, dates, status line and units (13-14px)."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Line chips, buttons, transfer signs (14-15px)."
+      },
+      "numeral": {
+        "displayName": "Numeral",
+        "purpose": "Route-bullet minutes, tabular; 26px Today, 15px three-digit, 11px small."
+      },
+      "tag": {
+        "displayName": "Tag",
+        "purpose": "Inline uppercase 'Fiction writer' mark; the only uppercase text."
+      }
+    },
+    "fonts": [
+      {
+        "family": "Heros",
+        "source": "TeX Gyre Heros (GUST Font License), self-hosted",
+        "files": [
+          "/fonts/heros-regular.woff2 (400)",
+          "/fonts/heros-bold.woff2 (700)"
+        ],
+        "note": "No Medium weight exists; Bold stands in for Helvetica Medium."
+      }
+    ],
+    "shadows": [],
+    "rules": [
+      {
+        "name": "band-top-rule",
+        "value": "2px solid #ffffff, 10px below the top edge of bands, 8px in the Today panel",
+        "purpose": "Signage rule inside black surfaces."
+      },
+      {
+        "name": "row-hairline",
+        "value": "1px solid #d6d6d6",
+        "purpose": "Between stop rows."
+      },
+      {
+        "name": "control-border",
+        "value": "1.5px solid #111111",
+        "purpose": "Chips, inputs, outline buttons."
+      },
+      {
+        "name": "strip-rule",
+        "value": "2px solid #111111",
+        "purpose": "Bottom of the sticky control strip."
+      },
+      {
+        "name": "sign-rules",
+        "value": "5px solid #111111 top, 1px solid #111111 bottom",
+        "purpose": "Transfer signs."
+      },
+      {
+        "name": "focus-ring",
+        "value": "outline: 2px solid #0039a6; outline-offset: 2px",
+        "purpose": "All :focus-visible."
+      }
+    ],
+    "motion": [
+      {
+        "name": "arrive",
+        "value": "clip-path inset(0 100% 0 0) to inset(0) over 420ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Today panel entrance wipe; only under prefers-reduced-motion: no-preference."
+      },
+      {
+        "name": "scroll-to-today",
+        "value": "scrollTo behavior smooth (auto under reduced motion)",
+        "purpose": "Bring the Today panel under the sticky strip after a pick."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile",
+        "value": "max-width: 640px"
+      }
+    ],
+    "dataEncoding": {
+      "wordsPerMinute": 240,
+      "bands": [
+        {
+          "token": "line-1",
+          "label": "Under 5 min",
+          "words": "0-1199"
+        },
+        {
+          "token": "line-2",
+          "label": "5-10 min",
+          "words": "1200-2399"
+        },
+        {
+          "token": "line-3",
+          "label": "10-20 min",
+          "words": "2400-4799"
+        },
+        {
+          "token": "line-4",
+          "label": "20-30 min",
+          "words": "4800-7199"
+        },
+        {
+          "token": "line-5",
+          "label": "30-45 min",
+          "words": "7200-10799"
+        },
+        {
+          "token": "line-6",
+          "label": "45 min+",
+          "words": "10800+"
+        },
+        {
+          "token": "line-0",
+          "label": "Length unknown",
+          "words": "none"
+        }
+      ]
+    },
+    "colorScheme": "light only"
+  },
+  "components": [
+    {
+      "name": "Route Bullet",
+      "kind": "custom",
+      "refersTo": "bullet",
+      "description": "Perfect circle in the line color carrying reading time in minutes; black numeral on yellow, ? on grey.",
+      "html": "<div class=\"ds-row\"><span class=\"ds-bullet ds-c1\">4</span><span class=\"ds-bullet ds-c2\">8</span><span class=\"ds-bullet ds-c3\">15</span><span class=\"ds-bullet ds-c4\">24</span><span class=\"ds-bullet ds-c5\">38</span><span class=\"ds-bullet ds-c6\">62</span><span class=\"ds-bullet ds-c0\">?</span></div>",
+      "css": ":host{--ground:#ffffff;--ink:#111111;--ink-2:#4a4a4a;--rule:#d6d6d6;--band:#111111;--band-ink:#ffffff;--band-ink-2:#bdbdbd;--hover:#f3f3f3;--focus:#0039a6;--l1:#ee352e;--l2:#f96016;--l3:#fccc0a;--l4:#00933c;--l5:#0039a6;--l6:#b933ad;--l0:#808183;--sans:\"Heros\",\"Helvetica Neue\",Helvetica,Arial,sans-serif;} .ds-bullet{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--c,#808183);color:var(--fg,#fff);font:700 18px/1 var(--sans);letter-spacing:-0.02em;font-variant-numeric:tabular-nums;flex:none;} .ds-bullet.sm{width:22px;height:22px;font-size:11px;} .ds-c1{--c:#ee352e;} .ds-c2{--c:#f96016;} .ds-c3{--c:#fccc0a;--fg:#111;} .ds-c4{--c:#00933c;} .ds-c5{--c:#0039a6;} .ds-c6{--c:#b933ad;} .ds-c0{--c:#808183;} .ds-row{display:flex;gap:10px;flex-wrap:wrap;}"
+    },
+    {
+      "name": "Line Chips",
+      "kind": "chip",
+      "refersTo": "line-chip",
+      "description": "Reading-time filters in the sticky strip; pressed chip turns black.",
+      "html": "<div class=\"ds-lines\"><button class=\"ds-line\" aria-pressed=\"false\">All <span class=\"n\">7,223</span></button><button class=\"ds-line\" aria-pressed=\"true\"><span class=\"ds-bullet sm ds-c1\"></span>Under 5 min <span class=\"n\">412</span></button><button class=\"ds-line\" aria-pressed=\"false\"><span class=\"ds-bullet sm ds-c3\"></span>10–20 min <span class=\"n\">2,904</span></button></div>",
+      "css": ":host{--ground:#ffffff;--ink:#111111;--ink-2:#4a4a4a;--rule:#d6d6d6;--band:#111111;--band-ink:#ffffff;--band-ink-2:#bdbdbd;--hover:#f3f3f3;--focus:#0039a6;--l1:#ee352e;--l2:#f96016;--l3:#fccc0a;--l4:#00933c;--l5:#0039a6;--l6:#b933ad;--l0:#808183;--sans:\"Heros\",\"Helvetica Neue\",Helvetica,Arial,sans-serif;} .ds-bullet{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--c,#808183);color:var(--fg,#fff);font:700 18px/1 var(--sans);letter-spacing:-0.02em;font-variant-numeric:tabular-nums;flex:none;} .ds-bullet.sm{width:22px;height:22px;font-size:11px;} .ds-c1{--c:#ee352e;} .ds-c2{--c:#f96016;} .ds-c3{--c:#fccc0a;--fg:#111;} .ds-c4{--c:#00933c;} .ds-c5{--c:#0039a6;} .ds-c6{--c:#b933ad;} .ds-c0{--c:#808183;} .ds-lines{display:flex;flex-wrap:wrap;gap:6px;} .ds-line{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 12px 0 8px;border:1.5px solid var(--ink);border-radius:0;background:var(--ground);color:var(--ink);font:700 14px var(--sans);cursor:pointer;white-space:nowrap;} .ds-line:first-child{padding-left:12px;} .ds-line .n{font-weight:400;color:var(--ink-2);font-variant-numeric:tabular-nums;} .ds-line:hover{background:var(--hover);} .ds-line[aria-pressed=\"true\"]{background:var(--ink);color:var(--ground);} .ds-line[aria-pressed=\"true\"] .n{color:inherit;opacity:.7;} :focus-visible{outline:2px solid var(--focus,#0039a6);outline-offset:2px;}"
+    },
+    {
+      "name": "Pick Button",
+      "kind": "button",
+      "refersTo": "button-pick",
+      "description": "The one filled button on white; black with a signage arrow, Signal Blue on hover.",
+      "html": "<button class=\"ds-pick\">Pick one for today <svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" aria-hidden=\"true\"><path d=\"M4 12h15M13 6l6 6-6 6\"/></svg></button>",
+      "css": ":host{--ground:#ffffff;--ink:#111111;--ink-2:#4a4a4a;--rule:#d6d6d6;--band:#111111;--band-ink:#ffffff;--band-ink-2:#bdbdbd;--hover:#f3f3f3;--focus:#0039a6;--l1:#ee352e;--l2:#f96016;--l3:#fccc0a;--l4:#00933c;--l5:#0039a6;--l6:#b933ad;--l0:#808183;--sans:\"Heros\",\"Helvetica Neue\",Helvetica,Arial,sans-serif;} .ds-pick{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 12px;border:0;border-radius:0;background:var(--ink);color:var(--ground);font:700 14px var(--sans);cursor:pointer;} .ds-pick:hover{background:var(--focus);color:#fff;} :focus-visible{outline:2px solid var(--focus,#0039a6);outline-offset:2px;}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary action on white, e.g. Show more.",
+      "html": "<button class=\"ds-outline\">Show 120 more of 7,103</button>",
+      "css": ":host{--ground:#ffffff;--ink:#111111;--ink-2:#4a4a4a;--rule:#d6d6d6;--band:#111111;--band-ink:#ffffff;--band-ink-2:#bdbdbd;--hover:#f3f3f3;--focus:#0039a6;--l1:#ee352e;--l2:#f96016;--l3:#fccc0a;--l4:#00933c;--l5:#0039a6;--l6:#b933ad;--l0:#808183;--sans:\"Heros\",\"Helvetica Neue\",Helvetica,Arial,sans-serif;} .ds-outline{height:42px;padding:0 20px;border:1.5px solid var(--ink);border-radius:0;background:var(--ground);color:var(--ink);font:700 15px var(--sans);cursor:pointer;} .ds-outline:hover{background:var(--hover);} :focus-visible{outline:2px solid var(--focus,#0039a6);outline-offset:2px;}"
+    },
+    {
+      "name": "Search and Select",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Square 38px fields with 1.5px black borders; selects use a hard-stop chevron.",
+      "html": "<div class=\"ds-tools\"><input class=\"ds-input\" type=\"search\" placeholder=\"Search title or author\"><select class=\"ds-input ds-select\"><option>Shortest first</option></select></div>",
+      "css": ":host{--ground:#ffffff;--ink:#111111;--ink-2:#4a4a4a;--rule:#d6d6d6;--band:#111111;--band-ink:#ffffff;--band-ink-2:#bdbdbd;--hover:#f3f3f3;--focus:#0039a6;--l1:#ee352e;--l2:#f96016;--l3:#fccc0a;--l4:#00933c;--l5:#0039a6;--l6:#b933ad;--l0:#808183;--sans:\"Heros\",\"Helvetica Neue\",Helvetica,Arial,sans-serif;} .ds-tools{display:flex;gap:10px;flex-wrap:wrap;} .ds-input{font:400 15px var(--sans);color:var(--ink);background:var(--ground);border:1.5px solid var(--ink);border-radius:0;height:38px;padding:0 10px;} .ds-input::placeholder{color:var(--ink-2);} .ds-select{padding-right:28px;appearance:none;background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);background-position:right 14px center,right 9px center;background-size:5px 5px;background-repeat:no-repeat;} :focus-visible{outline:2px solid var(--focus,#0039a6);outline-offset:2px;}"
+    },
+    {
+      "name": "Stop Row",
+      "kind": "custom",
+      "refersTo": "bullet",
+      "description": "Dense list item: bullet | title, byline, dek | word count, divided by a 1px hairline.",
+      "html": "<ol class=\"ds-stops\"><li class=\"ds-stop\"><span class=\"ds-bullet ds-c2\">8</span><div><a class=\"ds-t\" href=\"#\">The Lottery</a><div class=\"ds-by\">Shirley Jackson · Jun 26, 1948 <span class=\"ds-tag\">Fiction writer</span> <button class=\"ds-hide\">Hide</button></div></div><div class=\"ds-len\"><b>1,867</b> <span>words</span></div></li></ol>",
+      "css": ":host{--ground:#ffffff;--ink:#111111;--ink-2:#4a4a4a;--rule:#d6d6d6;--band:#111111;--band-ink:#ffffff;--band-ink-2:#bdbdbd;--hover:#f3f3f3;--focus:#0039a6;--l1:#ee352e;--l2:#f96016;--l3:#fccc0a;--l4:#00933c;--l5:#0039a6;--l6:#b933ad;--l0:#808183;--sans:\"Heros\",\"Helvetica Neue\",Helvetica,Arial,sans-serif;} .ds-bullet{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--c,#808183);color:var(--fg,#fff);font:700 18px/1 var(--sans);letter-spacing:-0.02em;font-variant-numeric:tabular-nums;flex:none;} .ds-bullet.sm{width:22px;height:22px;font-size:11px;} .ds-c1{--c:#ee352e;} .ds-c2{--c:#f96016;} .ds-c3{--c:#fccc0a;--fg:#111;} .ds-c4{--c:#00933c;} .ds-c5{--c:#0039a6;} .ds-c6{--c:#b933ad;} .ds-c0{--c:#808183;} .ds-stops{list-style:none;margin:0;padding:0;font-family:var(--sans);color:var(--ink);} .ds-stop{display:grid;grid-template-columns:44px 1fr auto;gap:4px 18px;padding:13px 0;border-bottom:1px solid var(--rule);align-items:start;} .ds-t{color:inherit;font-weight:700;font-size:19px;line-height:1.2;letter-spacing:-0.01em;text-decoration:none;} .ds-t:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;} .ds-by{margin-top:3px;font-size:14px;color:var(--ink-2);} .ds-tag{display:inline-block;padding:1px 5px 0;background:var(--ink);color:var(--ground);font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;vertical-align:1px;} .ds-hide{font:400 12px var(--sans);color:var(--ink-2);background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:2px;cursor:pointer;} .ds-hide:hover{color:var(--ink);} .ds-len{text-align:right;white-space:nowrap;padding-top:2px;font-variant-numeric:tabular-nums;} .ds-len span{font-size:13px;color:var(--ink-2);} :focus-visible{outline:2px solid var(--focus,#0039a6);outline-offset:2px;}"
+    },
+    {
+      "name": "Transfer Sign",
+      "kind": "custom",
+      "refersTo": "bullet-small",
+      "description": "Line header in the length-sorted list, drawn as rules (5px over, 1px under), never a panel.",
+      "html": "<div class=\"ds-sign\"><span class=\"ds-bullet sm ds-c3\"></span>10–20 min</div>",
+      "css": ":host{--ground:#ffffff;--ink:#111111;--ink-2:#4a4a4a;--rule:#d6d6d6;--band:#111111;--band-ink:#ffffff;--band-ink-2:#bdbdbd;--hover:#f3f3f3;--focus:#0039a6;--l1:#ee352e;--l2:#f96016;--l3:#fccc0a;--l4:#00933c;--l5:#0039a6;--l6:#b933ad;--l0:#808183;--sans:\"Heros\",\"Helvetica Neue\",Helvetica,Arial,sans-serif;} .ds-bullet{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--c,#808183);color:var(--fg,#fff);font:700 18px/1 var(--sans);letter-spacing:-0.02em;font-variant-numeric:tabular-nums;flex:none;} .ds-bullet.sm{width:22px;height:22px;font-size:11px;} .ds-c1{--c:#ee352e;} .ds-c2{--c:#f96016;} .ds-c3{--c:#fccc0a;--fg:#111;} .ds-c4{--c:#00933c;} .ds-c5{--c:#0039a6;} .ds-c6{--c:#b933ad;} .ds-c0{--c:#808183;} .ds-sign{display:flex;align-items:center;gap:10px;padding:10px 0 8px;border-top:5px solid var(--ink);border-bottom:1px solid var(--ink);color:var(--ink);font:700 15px var(--sans);}"
+    },
+    {
+      "name": "Today Panel",
+      "kind": "card",
+      "refersTo": "today-panel",
+      "description": "The only black panel inside the list, with the band's white top rule and a clip-path wipe entrance.",
+      "html": "<section class=\"ds-today\"><span class=\"ds-where\">Today</span><span class=\"ds-bullet ds-c4\" style=\"width:64px;height:64px;font-size:26px\">24</span><div><h2>The Swimmer</h2><div class=\"ds-meta\">John Cheever · Jul 18, 1964 · 5,612 words, about 23 min</div></div><div class=\"ds-acts\"><a class=\"ds-go\" href=\"#\">Read on newyorker.com <svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" aria-hidden=\"true\"><path d=\"M4 12h15M13 6l6 6-6 6\"/></svg></a><button class=\"ds-again\">Pick another</button></div></section>",
+      "css": ":host{--ground:#ffffff;--ink:#111111;--ink-2:#4a4a4a;--rule:#d6d6d6;--band:#111111;--band-ink:#ffffff;--band-ink-2:#bdbdbd;--hover:#f3f3f3;--focus:#0039a6;--l1:#ee352e;--l2:#f96016;--l3:#fccc0a;--l4:#00933c;--l5:#0039a6;--l6:#b933ad;--l0:#808183;--sans:\"Heros\",\"Helvetica Neue\",Helvetica,Arial,sans-serif;} .ds-bullet{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--c,#808183);color:var(--fg,#fff);font:700 18px/1 var(--sans);letter-spacing:-0.02em;font-variant-numeric:tabular-nums;flex:none;} .ds-bullet.sm{width:22px;height:22px;font-size:11px;} .ds-c1{--c:#ee352e;} .ds-c2{--c:#f96016;} .ds-c3{--c:#fccc0a;--fg:#111;} .ds-c4{--c:#00933c;} .ds-c5{--c:#0039a6;} .ds-c6{--c:#b933ad;} .ds-c0{--c:#808183;} .ds-today{background:var(--band);color:var(--band-ink);position:relative;padding:30px 24px 24px;display:grid;grid-template-columns:auto auto 1fr;gap:6px 20px;align-items:center;font-family:var(--sans);} .ds-today::before{content:\"\";position:absolute;left:0;right:0;top:8px;height:2px;background:var(--band-ink);} .ds-where{font-weight:700;font-size:clamp(26px,4vw,40px);letter-spacing:-0.02em;} .ds-today h2{margin:0;font-size:clamp(22px,3vw,32px);line-height:1.1;letter-spacing:-0.02em;} .ds-meta{font-size:14px;color:var(--band-ink-2);margin-top:4px;} .ds-acts{grid-column:3;display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;} .ds-go,.ds-again{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 14px;font:700 14px var(--sans);text-decoration:none;cursor:pointer;border-radius:0;} .ds-go{background:var(--band-ink);color:#111;} .ds-again{background:transparent;color:var(--band-ink);border:1.5px solid var(--band-ink);} @media (prefers-reduced-motion:no-preference){.ds-today{animation:ds-arrive 420ms cubic-bezier(0.16,1,0.3,1);} @keyframes ds-arrive{from{clip-path:inset(0 100% 0 0);}to{clip-path:inset(0 0 0 0);}}} :focus-visible{outline:2px solid var(--focus,#0039a6);outline-offset:2px;}"
+    },
+    {
+      "name": "Signage Band",
+      "kind": "nav",
+      "refersTo": "today-panel",
+      "description": "Full-bleed black masthead/footer band with a 2px white rule 10px below the top edge.",
+      "html": "<header class=\"ds-band\"><h1>New Yorker Fiction, Shortest First</h1><p class=\"ds-sf\">All 7,223 short stories since 1940, ranked by reading time.</p><p class=\"ds-indie\">An independent index, not affiliated with The New Yorker.</p></header>",
+      "css": ":host{--ground:#ffffff;--ink:#111111;--ink-2:#4a4a4a;--rule:#d6d6d6;--band:#111111;--band-ink:#ffffff;--band-ink-2:#bdbdbd;--hover:#f3f3f3;--focus:#0039a6;--l1:#ee352e;--l2:#f96016;--l3:#fccc0a;--l4:#00933c;--l5:#0039a6;--l6:#b933ad;--l0:#808183;--sans:\"Heros\",\"Helvetica Neue\",Helvetica,Arial,sans-serif;} .ds-band{background:var(--band);color:var(--band-ink);position:relative;padding:44px 24px 32px;font-family:var(--sans);} .ds-band::before{content:\"\";position:absolute;left:0;right:0;top:10px;height:2px;background:var(--band-ink);} .ds-band h1{margin:0;font-weight:700;font-size:clamp(32px,5vw,56px);line-height:1.02;letter-spacing:-0.01em;} .ds-sf{margin:14px 0 0;font-size:clamp(17px,2vw,20px);line-height:1.35;} .ds-indie{margin:12px 0 0;font-size:13px;color:var(--band-ink-2);}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Signage Manual",
+    "overview": "The system is the 1970 New York subway signage standard and the 1972 diagram, applied to a reading list. Story length is the train line: every story is a stop led by a colored route bullet carrying its reading time in minutes, and the color tells you which band of time you are riding before you read a word. Black signage bands frame the page top and bottom, each with a thin white rule just inside its top edge; between them sits a white ground of dense rows divided by hairline rules.\n\nIt is a light, flat, single-typeface world. One grotesque (TeX Gyre Heros, a license-free Helvetica clone) in two weights does all the work, and scale contrast, not color or decoration, carries the hierarchy. There are no cards, no shadows, no gradients for tone, and no rounded corners: shapes are either square or perfect circles. Color is spent almost entirely on the route bullets, where it encodes data.\n\nThe site is light-only by contract. `color-scheme: light` is declared and no dark theme exists; adding one needs the owner's approval.",
+    "keyCharacteristics": [
+      "Route bullets in MTA line colors, keyed to reading time at 240 words a minute.",
+      "Black signage bands with a white top rule; one black panel inside the list (Today).",
+      "One grotesque, Regular and Bold only, with tabular lining figures for every count.",
+      "Dense, card-less rows on white with 1px rules; transfer signs drawn as rules.",
+      "Flat everywhere; circles are the only curve."
+    ],
+    "rules": [
+      {
+        "name": "The Line Means Length Rule",
+        "body": "A line color appears only as a route bullet and only to state a reading-time band. Never use a line color for decoration, emphasis, links or backgrounds. Bands are fixed: under 5, 5–10, 10–20, 20–30, 30–45, 45+ minutes, grey for unknown.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Black Panel Rule",
+        "body": "Black fills only the masthead band, the footer band, and, inside the list, the Today panel. No other element in the list gets a black panel.",
+        "section": "colors"
+      },
+      {
+        "name": "The Numeral Color Rule",
+        "body": "Bullet numerals are white, except on Broadway Yellow, where they are black.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Grotesque Rule",
+        "body": "Heros Regular and Bold only. No second family, no italics, no other weights.",
+        "section": "typography"
+      },
+      {
+        "name": "The Scale Does Hierarchy Rule",
+        "body": "Rank is shown by size and the Regular/Bold switch, never by color. Text color is black, Station Grey, or their on-black equivalents.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Figures Rule",
+        "body": "Every count, word total, minute and word span sets in tabular lining figures so columns of numbers hold still.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Signage Rule",
+        "body": "No box shadows, no blur, no tonal gradients. If something must stand forward, it turns black or gets a heavier rule.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Circle-or-Square Rule",
+        "body": "A shape is either square-cornered or a perfect circle. No intermediate radii, pills or rounded rectangles.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do lead every story with a route bullet in its band's line color, minutes inside, computed at 240 words a minute.",
+      "Do keep text to Heros Regular (400) and Bold (700), and use Bold where the signage tradition uses Medium.",
+      "Do set every number in tabular lining figures.",
+      "Do separate rows with 1px Hairline Grey (#d6d6d6) rules and draw line headers as rules (5px over, 1px under), not panels.",
+      "Do put the thin white rule inside the top edge of every black band or panel (2px).",
+      "Do use 1.5px black borders and square corners on all controls, and the 2px Signal Blue outline for focus.",
+      "Do gate motion behind prefers-reduced-motion."
+    ],
+    "donts": [
+      "Don't use a line color for anything except a reading-time bullet.",
+      "Don't add a second black panel inside the list; Today is the only one.",
+      "Don't use cards, shadows, tonal gradients, or any radius other than a perfect circle.",
+      "Don't add a second typeface, italics or intermediate weights, or serve the magazine's proprietary fonts.",
+      "Don't add a dark theme without the owner's approval; the world is light-only.",
+      "Don't rank text with line colors or extra grey tints; size and weight do that, with Station Grey reserved for secondary text."
+    ]
+  }
+}

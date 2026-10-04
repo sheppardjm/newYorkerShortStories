@@ -6,244 +6,408 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>New Yorker Fiction by Length</title>
-    <meta name="description" content="Every New Yorker short story since 1940, ranked by word count, with links to each story." />
+    <meta name="description" content="Every New Yorker short story since 1940, ranked by reading time, with links to each story. An independent index." />
+    <meta name="theme-color" content="#111111" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+    <link rel="preload" href="/fonts/heros-bold.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/heros-regular.woff2" as="font" type="font/woff2" crossorigin />
     <style is:global>
-/* Layout: one reading column; a sticky filter bar; each story is a ledger row with its word count as a bar */
-:root {
-  --bg: #f5f6f4;
-  --surface: #ffffff;
-  --ink: #1c1e23;
-  --muted: #5e636d;
-  --rule: #dcdfe3;
-  --accent: #2c4f8f;
-  --accent-soft: #dfe6f3;
-  --done: #5f7f56;
-  --serif: "Newsreader", Georgia, "Times New Roman", serif;
-  --sans: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #14161a; --surface: #1c1f24; --ink: #e8e9ec; --muted: #9aa0aa; --rule: #2d3138;
-    --accent: #8fb0ea; --accent-soft: #24324b; --done: #9cc08f; color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #14161a; --surface: #1c1f24; --ink: #e8e9ec; --muted: #9aa0aa; --rule: #2d3138;
-  --accent: #8fb0ea; --accent-soft: #24324b; --done: #9cc08f; color-scheme: dark;
-}
-* { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 15px; line-height: 1.5; }
-.wrap { max-width: 860px; margin: 0 auto; padding-inline: 16px; padding-block: 40px 80px; }
-header h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(30px, 6vw, 44px); line-height: 1.05; letter-spacing: -0.01em; margin: 0 0 10px; text-wrap: balance; }
-header p { font-family: var(--serif); font-size: 18px; color: var(--muted); margin: 0; max-width: 62ch; }
-.stats { display: flex; flex-wrap: wrap; gap: 6px 22px; margin-top: 18px; font-size: 13px; color: var(--muted); }
-.stats b { font-family: var(--mono); font-weight: 500; color: var(--ink); }
+      @font-face {
+        font-family: "Heros";
+        src: url("/fonts/heros-regular.woff2") format("woff2");
+        font-weight: 400;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Heros";
+        src: url("/fonts/heros-bold.woff2") format("woff2");
+        font-weight: 700;
+        font-display: swap;
+      }
 
-.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-bottom: 1px solid var(--rule); padding-block: 14px; margin-top: 28px; display: grid; gap: 10px; }
-.row1 { display: flex; flex-wrap: wrap; gap: 8px; }
-.row1 input[type=search] { flex: 1 1 220px; min-width: 0; }
-input[type=search], select { font: inherit; color: var(--ink); background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 7px 10px; }
-input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.chips { display: flex; flex-wrap: wrap; gap: 6px; }
-.chip { font: 500 13px var(--sans); color: var(--ink); background: transparent; border: 1px solid var(--rule); border-radius: 999px; padding: 4px 11px; cursor: pointer; }
-.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
-.row3 { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; font-size: 13px; color: var(--muted); }
-.row3 label { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
-.btn { font: 600 13px var(--sans); color: var(--accent); background: var(--accent-soft); border: 0; border-radius: 6px; padding: 7px 12px; cursor: pointer; }
-.count { margin-left: auto; font-family: var(--mono); }
+      :root {
+        --ground: #ffffff;
+        --ink: #111111;
+        --ink-2: #4a4a4a;
+        --rule: #d6d6d6;
+        --rule-strong: #111111;
+        --band: #111111;
+        --band-ink: #ffffff;
+        --band-ink-2: #bdbdbd;
+        --hover: #f3f3f3;
+        --focus: #0039a6;
 
-ol { list-style: none; margin: 0; padding: 0; }
-li.story { display: grid; grid-template-columns: 92px 1fr auto; gap: 4px 16px; padding-block: 16px; border-bottom: 1px solid var(--rule); align-items: start; }
-li.story.pick { background: var(--accent-soft); margin-inline: -12px; padding-inline: 12px; border-radius: 6px; }
-.len { font-family: var(--mono); font-variant-numeric: tabular-nums; }
-.len .w { font-size: 15px; font-weight: 500; }
-.len .m { font-size: 12px; color: var(--muted); }
-.meter { height: 3px; background: var(--rule); border-radius: 2px; margin-top: 6px; overflow: hidden; }
-.meter i { display: block; height: 100%; background: var(--accent); }
-.body { min-width: 0; }
-.body a.t { font-family: var(--serif); font-size: 20px; line-height: 1.2; color: var(--ink); text-decoration: none; }
-.body a.t:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
-.by { font-size: 13px; color: var(--muted); margin-top: 3px; }
-.by .rank { font-family: var(--mono); }
-.fw { font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--done); border: 1px solid currentColor; border-radius: 4px; padding: 0 5px; margin-left: 4px; white-space: nowrap; }
-.dek { font-family: var(--serif); font-size: 15px; color: var(--muted); margin: 6px 0 0; max-width: 62ch; }
-.read { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; color: var(--muted); cursor: pointer; white-space: nowrap; padding-top: 4px; }
-li.story.is-read .t { color: var(--muted); }
-li.story.is-read .read { color: var(--done); }
-input[type=checkbox] { accent-color: var(--accent); }
-.acts { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
-.hide, .linkbtn { font: 12px var(--sans); color: var(--muted); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
-.hide:hover, .linkbtn:hover { color: var(--accent); }
-.more { display: block; margin: 24px auto 0; }
-.empty { padding: 40px 0; color: var(--muted); font-family: var(--serif); font-size: 18px; }
-footer { margin-top: 40px; font-size: 13px; color: var(--muted); max-width: 66ch; }
-@media (max-width: 560px) {
-  li.story { grid-template-columns: 1fr auto; }
-  .len { grid-column: 1 / -1; display: flex; align-items: baseline; gap: 10px; }
-  .len .meter { flex: 1; margin: 0; align-self: center; }
-  .count { margin-left: 0; }
-}
-footer a { color: var(--accent); }
-</style>
+        /* line colors, keyed to reading time */
+        --l1: #ee352e; /* under 5 min */
+        --l2: #f96016; /* 5–10 */
+        --l3: #fccc0a; /* 10–20 */
+        --l4: #00933c; /* 20–30 */
+        --l5: #0039a6; /* 30–45 */
+        --l6: #b933ad; /* 45+ */
+        --l0: #808183; /* length unknown */
+
+        --sans: "Heros", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        --gutter: clamp(16px, 4vw, 40px);
+        --max: 1080px;
+        color-scheme: light;
+      }
+
+      * { box-sizing: border-box; }
+      html { -webkit-text-size-adjust: 100%; scrollbar-color: var(--ink-2) var(--ground); }
+      body { margin: 0; background: var(--ground); color: var(--ink); font: 400 16px/1.45 var(--sans); font-kerning: normal; -webkit-font-smoothing: antialiased; }
+      ::selection { background: var(--l3); color: #111; }
+      a { color: inherit; }
+      :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+      .wrap { max-width: var(--max); margin: 0 auto; padding-inline: var(--gutter); }
+      .num { font-variant-numeric: tabular-nums lining-nums; }
+
+      /* Signage band: black panel with the thin white rule near its top edge */
+      .band { background: var(--band); color: var(--band-ink); position: relative; }
+      .band::before { content: ""; position: absolute; left: 0; right: 0; top: 10px; height: 2px; background: var(--band-ink); }
+      .masthead { padding-block: 44px 32px; }
+      .masthead h1 { margin: 0; font-weight: 700; font-size: clamp(32px, 5vw, 56px); line-height: 1.02; letter-spacing: -0.01em; text-wrap: balance; }
+      .standfirst { margin: 14px 0 0; font-size: clamp(17px, 2vw, 20px); line-height: 1.35; max-width: 70ch; }
+      .indie { margin: 12px 0 0; font-size: 13px; color: var(--band-ink-2); }
+
+      /* Route bullets */
+      .bullet { --c: var(--l0); --fg: #fff; flex: none; display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--c); color: var(--fg); font-weight: 700; font-size: 18px; letter-spacing: -0.02em; line-height: 1; font-variant-numeric: tabular-nums; }
+      .bullet.sm { width: 22px; height: 22px; font-size: 11px; }
+      .bullet.c1 { --c: var(--l1); } .bullet.c2 { --c: var(--l2); } .bullet.c3 { --c: var(--l3); --fg: #111; }
+      .bullet.c4 { --c: var(--l4); } .bullet.c5 { --c: var(--l5); } .bullet.c6 { --c: var(--l6); } .bullet.c0 { --c: var(--l0); }
+      .bullet.long { font-size: 15px; }
+
+      /* Control strip */
+      .controls { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: var(--ground); border-bottom: 2px solid var(--rule-strong); }
+      .controls .wrap { display: grid; gap: 10px; padding-block: 12px 10px; }
+      .toolbar { display: grid; gap: 12px; padding-block: 22px 16px; }
+      .lines { display: flex; flex-wrap: wrap; gap: 6px; }
+      .lines::-webkit-scrollbar { display: none; }
+      .line { flex: none; display: inline-flex; align-items: center; gap: 8px; height: 38px; padding: 0 12px 0 8px; border: 1.5px solid var(--rule-strong); background: var(--ground); color: var(--ink); font: 700 14px var(--sans); cursor: pointer; white-space: nowrap; }
+      .line .n { font-weight: 400; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+      .line:hover { background: var(--hover); }
+      .line[aria-pressed="true"] { background: var(--ink); color: var(--ground); }
+      .line[aria-pressed="true"] .n { color: inherit; opacity: 0.7; }
+      .line.all { padding-left: 12px; }
+      .tools { display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: center; }
+      .tools input[type="search"] { flex: 1 1 220px; min-width: 0; }
+      input[type="search"], select { font: 400 15px var(--sans); color: var(--ink); background: var(--ground); border: 1.5px solid var(--rule-strong); border-radius: 0; height: 38px; padding: 0 10px; }
+      select { padding-right: 28px; appearance: none; background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%); background-position: right 14px center, right 9px center; background-size: 5px 5px; background-repeat: no-repeat; }
+      input::placeholder { color: var(--ink-2); }
+      .checks { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; }
+      .checks label { display: inline-flex; gap: 7px; align-items: center; cursor: pointer; }
+      input[type="checkbox"] { width: 16px; height: 16px; margin: 0; accent-color: var(--ink); }
+      .pick { display: inline-flex; align-items: center; gap: 8px; height: 34px; padding: 0 12px; border: 0; background: var(--ink); color: var(--ground); font: 700 14px var(--sans); cursor: pointer; }
+      .pick svg { width: 16px; height: 16px; }
+      .pick .short { display: none; }
+      .pick:hover { background: var(--focus); color: #fff; }
+      .status { display: flex; justify-content: space-between; gap: 14px; align-items: center; font-size: 13px; color: var(--ink-2); white-space: nowrap; }
+      .status .right { display: inline-flex; gap: 14px; align-items: center; }
+      .status b { color: var(--ink); font-weight: 700; }
+
+      /* Today panel: the only black panel inside the list */
+      .today { background: var(--band); color: var(--band-ink); position: relative; margin-top: 24px; padding: 30px 24px 24px; display: grid; grid-template-columns: auto auto 1fr; gap: 6px 20px; align-items: center; }
+      .today::before { content: ""; position: absolute; left: 0; right: 0; top: 8px; height: 2px; background: var(--band-ink); }
+      .today .where { font-weight: 700; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.02em; }
+      .today .bullet { width: 64px; height: 64px; font-size: 26px; }
+      .today h2 { margin: 0; font-size: clamp(22px, 3vw, 32px); line-height: 1.1; letter-spacing: -0.02em; text-wrap: balance; }
+      .today .meta { font-size: 14px; color: var(--band-ink-2); margin-top: 4px; }
+      .today .acts { grid-column: 3; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+      .today a.go, .today button { display: inline-flex; align-items: center; gap: 8px; height: 38px; padding: 0 14px; font: 700 14px var(--sans); text-decoration: none; cursor: pointer; }
+      .today a.go { background: var(--band-ink); color: #111; }
+      .today button { background: transparent; color: var(--band-ink); border: 1.5px solid var(--band-ink); }
+      .today a.go svg { width: 16px; height: 16px; }
+      @media (prefers-reduced-motion: no-preference) {
+        .today { animation: arrive 420ms cubic-bezier(0.16, 1, 0.3, 1); }
+        @keyframes arrive { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+      }
+
+      /* Stops */
+      ol.stops { list-style: none; margin: 8px 0 0; padding: 0; }
+      .stop { display: grid; grid-template-columns: 44px 1fr auto; gap: 4px 18px; padding: 13px 0; border-bottom: 1px solid var(--rule); align-items: start; }
+      .stop .body { min-width: 0; }
+      .stop a.t { font-weight: 700; font-size: 19px; line-height: 1.2; letter-spacing: -0.01em; text-decoration: none; }
+      .stop a.t:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+      .by { margin-top: 3px; font-size: 14px; color: var(--ink-2); display: flex; flex-wrap: wrap; align-items: center; gap: 3px 5px; }
+      .by .nw { white-space: nowrap; }
+      .hide-m { display: none; }
+      .tag { display: inline-block; padding: 1px 5px 0; background: var(--ink); color: var(--ground); font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; vertical-align: 1px; }
+      .dek { margin: 6px 0 0; font-size: 15px; line-height: 1.45; color: var(--ink-2); max-width: 68ch; }
+      .len { text-align: right; white-space: nowrap; padding-top: 2px; }
+      .len .w { font-weight: 700; font-size: 16px; }
+      .len .u { font-size: 13px; color: var(--ink-2); }
+      .hide { font: 400 12px var(--sans); color: var(--ink-2); background: none; border: 0; padding: 0; text-decoration: underline; text-underline-offset: 2px; cursor: pointer; }
+      .hide:hover { color: var(--ink); }
+      .empty { padding: 48px 0; font-size: 20px; }
+      .sign { display: flex; align-items: center; gap: 10px; margin-top: 22px; padding: 10px 0 8px; border-top: 5px solid var(--ink); border-bottom: 1px solid var(--ink); color: var(--ink); font-weight: 700; font-size: 15px; }
+      .more { display: flex; justify-content: center; padding-block: 28px 8px; }
+      .more button { height: 42px; padding: 0 20px; border: 1.5px solid var(--rule-strong); background: var(--ground); color: var(--ink); font: 700 15px var(--sans); cursor: pointer; }
+      .more button:hover { background: var(--hover); }
+
+      footer.band { margin-top: 64px; }
+      footer .wrap { padding-block: 40px 48px; display: grid; gap: 14px; font-size: 14px; line-height: 1.55; color: var(--band-ink-2); }
+      footer p { margin: 0; max-width: 72ch; }
+      footer b { color: var(--band-ink); }
+      footer a { color: var(--band-ink); text-underline-offset: 3px; }
+      footer .key { display: flex; flex-wrap: wrap; gap: 10px 18px; color: var(--band-ink); font-size: 13px; }
+      footer .key span { display: inline-flex; gap: 8px; align-items: center; }
+
+      @media (max-width: 640px) {
+        .masthead { padding-block: 34px 26px; }
+        .stop { grid-template-columns: 36px 1fr auto; gap: 4px 12px; }
+        .stop .bullet { width: 36px; height: 36px; font-size: 15px; }
+        .stop .bullet.long { font-size: 12px; }
+        .stop a.t { font-size: 17px; }
+        .by .hide { display: none; }
+        .len { display: grid; justify-items: end; align-content: start; gap: 10px; }
+        .hide-m { display: inline; }
+        .lines { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); }
+        .line { height: 34px; font-size: 13px; }
+        .toolbar { padding-block: 18px 12px; }
+        .toolbar .tools { display: grid; grid-template-columns: 1fr 1fr; }
+        .toolbar .tools input[type="search"] { grid-column: 1 / -1; }
+        .pick .full { display: none; } .pick .short { display: inline; }
+        .status .right { gap: 10px; }
+        .today { grid-template-columns: auto 1fr; padding: 26px 16px 18px; }
+        .today .where { grid-column: 1 / -1; }
+        .today .acts { grid-column: 1 / -1; }
+      }
+    </style>
   </head>
   <body>
-
-
-<div class="wrap">
-  <header>
-    <h1>New Yorker Fiction, Shortest First</h1>
-    <p>Every story from The New Yorker’s fiction archive, ranked by word count, so a busy day still gets its story.</p>
-    <div class="stats" id="stats"></div>
-  </header>
-
-  <div class="bar">
-    <div class="row1">
-      <input type="search" id="q" placeholder="Search title or author" aria-label="Search title or author">
-      <select id="decade" aria-label="Decade"><option value="">All decades</option></select>
-      <select id="sort" aria-label="Sort order">
-        <option value="short">Shortest first</option>
-        <option value="long">Longest first</option>
-        <option value="new">Newest first</option>
-        <option value="old">Oldest first</option>
-      </select>
-    </div>
-    <div class="chips" id="chips" role="group" aria-label="Length"></div>
-    <div class="row3">
-      <label><input type="checkbox" id="fictionOnly"> Known fiction writers only</label>
-      <label><input type="checkbox" id="modern"> 1993 and later</label>
-      <label><input type="checkbox" id="hideRead"> Hide stories I’ve read</label>
-      <button class="btn" id="random" type="button">Pick one for today</button>
-      <button class="linkbtn" id="showHidden" type="button" hidden></button>
-      <span class="count" id="count"></span>
-    </div>
-  </div>
-
-  <ol id="list"></ol>
-  <button class="btn more" id="more" type="button" hidden>Show more</button>
-
-  <footer>
-    Word counts come from each story’s page on newyorker.com and include the title and byline, so treat them as close estimates. Reading time assumes 240 words per minute. “Fiction writer” marks authors known mainly for novels or short stories: anyone with a story here from 1993 on (when the magazine began filing humor separately, as Shouts & Murmurs), anyone listed on Writing Atlas, and older authors identified by name. Use “1993 and later” for the most reliable set. The list starts in 1940: before then, the archive labels nearly every humor piece and column as fiction, with no way to tell them apart. The New Yorker’s online Flash Fiction series (summers of 2017 and 2020–23) is left out, as is anything under 500 words. Every piece under 2,500 words was reviewed from its opening lines, and humor sketches, parodies and essays the magazine filed as fiction were removed. Poems and cartoon features that the archive files under fiction have been filtered out; if one slipped through, use Hide. Some archive stories have only a summary on the website; the full text is in the scanned issue linked from that page. Their length is unknown, so they sit under “Length unknown” instead of in the ranking. Your “read” checkmarks are saved in this browser only. <a href="/new_yorker_stories_by_word_count.csv" download>Download the full list as a spreadsheet (CSV)</a>.
-  </footer>
-</div>
-
-<script is:inline>
-const BANDS = [
-  { id: "all", label: "Any length", min: 0, max: Infinity },
-  { id: "u1k", label: "500–1,000", min: 0, max: 1000 },
-  { id: "1-2", label: "1,000–2,000", min: 1000, max: 2000 },
-  { id: "2-4", label: "2,000–4,000", min: 2000, max: 4000 },
-  { id: "4-7", label: "4,000–7,000", min: 4000, max: 7000 },
-  { id: "7+", label: "7,000+", min: 7000, max: Infinity },
-  { id: "unk", label: "Length unknown", unknown: true },
-];
-const PAGE = 150, WPM = 240;
-let showHidden = false;
-const $ = id => document.getElementById(id);
-const store = {
-  get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } },
-  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
-};
-let DATA = [], read = new Set(store.get("read", [])), hidden = new Set(store.get("hidden", [])), band = store.get("band", "all"), shown = PAGE, pick = null;
-const fmt = n => n.toLocaleString("en-US");
-const mins = w => { const m = Math.max(1, Math.round(w / WPM)); return m < 60 ? `${m} min` : `${Math.floor(m/60)} hr ${m%60} min`; };
-const esc = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-const date = d => new Date(d + "T12:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
-
-function filtered() {
-  const q = $("q").value.trim().toLowerCase(), dec = $("decade").value, b = BANDS.find(x => x.id === band) || BANDS[0];
-  const hide = $("hideRead").checked;
-  let r = DATA.filter(s => (b.unknown ? s.w == null : b.id === "all" || (s.w != null && s.w >= b.min && s.w < b.max))
-    && (!dec || Math.floor(s.y / 10) * 10 == dec)
-    && (!hide || !read.has(s.p))
-    && (!$("fictionOnly").checked || s.f === "F")
-    && (!$("modern").checked || s.y >= 1993)
-    && (showHidden ? hidden.has(s.p) : !hidden.has(s.p))
-    && (!q || s.lc.includes(q)));
-  const so = $("sort").value;
-  if (so === "long") r = r.filter(s => s.w != null).reverse().concat(r.filter(s => s.w == null));
-  else if (so === "new") r = r.slice().sort((a, b) => b.d.localeCompare(a.d));
-  else if (so === "old") r = r.slice().sort((a, b) => a.d.localeCompare(b.d));
-  return r;
-}
-
-function render() {
-  const r = filtered();
-  $("count").textContent = `${fmt(r.length)} ${r.length === 1 ? "story" : "stories"}`;
-  const list = $("list");
-  if (!r.length) { list.innerHTML = `<li class="empty">No stories match. Try a wider length or clear the search.</li>`; $("more").hidden = true; return; }
-  let rows = r.slice(0, shown);
-  if (pick && !rows.includes(pick)) rows = [pick, ...rows];
-  list.innerHTML = rows.map(s => `
-    <li class="story${read.has(s.p) ? " is-read" : ""}${s === pick ? " pick" : ""}" data-p="${s.p}">
-      <div class="len">${s.w == null ? `<div class="w">—</div><div class="m">scan only</div>` : `<div class="w">${fmt(s.w)}</div><div class="m">${mins(s.w)}</div><div class="meter"><i style="width:${Math.min(100, s.w / 120).toFixed(1)}%"></i></div>`}</div>
-      <div class="body">
-        <a class="t" href="https://www.newyorker.com${s.p}" target="_blank" rel="noopener">${esc(s.t)}</a>
-        <div class="by">${esc(s.a || "Unknown author")}${s.f === "F" ? ` <span class="fw" title="Known primarily as a fiction writer">fiction writer</span>` : ""} · ${date(s.d)}${s.rank ? ` · <span class="rank">#${fmt(s.rank)}</span> shortest` : ""}</div>
-        ${s.k ? `<p class="dek">${esc(s.k)}</p>` : ""}
+    <header class="band">
+      <div class="wrap masthead">
+        <div>
+          <h1>New Yorker Fiction, Shortest First</h1>
+          <p class="standfirst">All <span id="total" class="num">7,223</span> short stories since 1940, ranked by reading time. Pick a line, pick a story.</p>
+          <p class="indie">An independent index, not affiliated with The New Yorker. Stories open on newyorker.com; full text needs a subscription.</p>
+        </div>
       </div>
-      <div class="acts"><label class="read"><input type="checkbox" ${read.has(s.p) ? "checked" : ""} aria-label="Mark “${esc(s.t)}” as read"> Read</label><button class="hide" type="button" title="${hidden.has(s.p) ? "Put this back in the list" : "Hide this if it isn’t a story (a cartoon, a poem)"}">${hidden.has(s.p) ? "Unhide" : "Hide"}</button></div>
-    </li>`).join("");
-  $("more").hidden = r.length <= shown;
-  $("more").textContent = `Show more (${fmt(r.length - shown)} left)`;
-}
+    </header>
 
-function chips() {
-  $("chips").innerHTML = BANDS.map(b => `<button class="chip" type="button" data-b="${b.id}" aria-pressed="${b.id === band}">${b.label}</button>`).join("");
-}
+    <section class="toolbar wrap" aria-label="Search and options">
+      <div class="tools">
+        <input type="search" id="q" placeholder="Search title or author" aria-label="Search title or author" />
+        <select id="decade" aria-label="Decade"><option value="">All decades</option></select>
+        <select id="sort" aria-label="Sort order">
+          <option value="short">Shortest first</option>
+          <option value="long">Longest first</option>
+          <option value="new">Newest first</option>
+          <option value="old">Oldest first</option>
+        </select>
+      </div>
+      <div class="checks">
+        <label><input type="checkbox" id="fictionOnly" /> Known fiction writers only</label>
+        <label><input type="checkbox" id="modern" /> 1993 and later</label>
+      </div>
+    </section>
 
-function reset() { shown = PAGE; pick = null; render(); }
+    <nav class="controls" aria-label="Reading time">
+      <div class="wrap">
+        <div class="lines" id="lines" role="group" aria-label="Reading time"></div>
+        <div class="status">
+          <span id="span" class="num"></span>
+          <span class="right"><button class="hide" id="showHidden" type="button" hidden></button><b id="count" class="num"></b>
+            <button class="pick" id="pick" type="button" aria-label="Pick one for today"><span class="full">Pick one for today</span><span class="short">Pick one</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" /></svg>
+            </button></span>
+        </div>
+      </div>
+    </nav>
 
-$("chips").addEventListener("click", e => {
-  const b = e.target.closest(".chip"); if (!b) return;
-  band = b.dataset.b; store.set("band", band); chips(); reset();
-});
-["q", "decade", "sort", "hideRead", "fictionOnly", "modern"].forEach(id => $(id).addEventListener("input", reset));
-$("list").addEventListener("click", e => {
-  const b = e.target.closest("button.hide"); if (!b) return;
-  const p = b.closest("li.story").dataset.p;
-  hidden.has(p) ? hidden.delete(p) : hidden.add(p);
-  store.set("hidden", [...hidden]); hiddenLink(); render();
-});
-function hiddenLink() {
-  $("showHidden").hidden = !hidden.size && !showHidden;
-  $("showHidden").textContent = showHidden ? "Back to the list" : `Hidden (${hidden.size})`;
-}
-$("showHidden").addEventListener("click", () => { showHidden = !showHidden; hiddenLink(); reset(); });
-$("more").addEventListener("click", () => { shown += PAGE; render(); });
-$("list").addEventListener("change", e => {
-  const li = e.target.closest("li.story"); if (!li) return;
-  e.target.checked ? read.add(li.dataset.p) : read.delete(li.dataset.p);
-  store.set("read", [...read]);
-  li.classList.toggle("is-read", e.target.checked);
-  stats();
-});
-$("random").addEventListener("click", () => {
-  const r = filtered().filter(s => !read.has(s.p));
-  if (!r.length) return;
-  pick = r[Math.floor(Math.random() * r.length)];
-  render(); window.scrollTo({ top: $("list").offsetTop - 160, behavior: "smooth" });
-});
+    <main class="wrap">
+      <div id="today"></div>
+      <ol class="stops" id="list" aria-live="polite"></ol>
+      <div class="more"><button id="more" type="button" hidden>Show more</button></div>
+    </main>
 
-function stats() {
-  const ws = DATA.filter(s => s.w != null).map(s => s.w), med = ws[Math.floor(ws.length / 2)];
-  const under2 = ws.filter(w => w < 2000).length;
-  const y0 = Math.min(...DATA.map(s => s.y)), y1 = Math.max(...DATA.map(s => s.y));
-  $("stats").innerHTML = `<span><b>${fmt(DATA.length)}</b> stories, ${y0}–${y1}</span><span><b>${fmt(DATA.length - ws.length)}</b> with length unknown</span><span>Median <b>${fmt(med)}</b> words</span><span><b>${fmt(under2)}</b> under 2,000 words</span><span><b>${fmt(read.size)}</b> marked read</span>`;
-}
+    <footer class="band">
+      <div class="wrap">
+        <div class="key" id="key" aria-label="Line key"></div>
+        <p><b>How the list was made.</b> Stories were crawled from newyorker.com’s fiction archive. Word counts come from each story’s page and run a few percent high; reading time assumes 240 words a minute. Every piece under 2,500 words was reviewed from its opening lines, and the humor sketches, parodies, essays, poems and cartoon features the archive files as fiction were removed. The list starts in 1940, because before then the archive labels nearly every humor piece as fiction. It leaves out pieces under 500 words (except Saroyan’s “A Fresno Fable”) and the online Flash Fiction series.</p>
+        <p><b>Fiction writer</b> marks authors known mainly for novels or short stories: anyone with a story here from 1993 on, when the magazine began running humor separately as Shouts &amp; Murmurs, plus older authors identified by name. Some archive stories have only a summary online, so their length is unknown; they ride the grey line. If something slipped through that isn’t a story, use Hide.</p>
+        <p><a href="/new_yorker_stories_by_word_count.csv" download>Download the full list as a spreadsheet (CSV)</a>. Set in TeX Gyre Heros (GUST Font License). Not affiliated with The New Yorker or Condé Nast.</p>
+      </div>
+    </footer>
 
-fetch("data.json").then(r => r.json()).then(rows => {
-  DATA = rows.map((r, i) => ({ t: r[0], a: r[1], y: r[2], d: r[3], w: r[4], p: r[5], k: r[6], f: r[7], rank: r[4] == null ? 0 : i + 1, lc: (r[0] + " " + r[1]).toLowerCase() }));
-  const decs = [...new Set(DATA.map(s => Math.floor(s.y / 10) * 10))].sort();
-  $("decade").insertAdjacentHTML("beforeend", decs.map(d => `<option value="${d}">${d}s</option>`).join(""));
-  chips(); stats(); hiddenLink(); render();
-}).catch(() => { $("list").innerHTML = `<li class="empty">The story list didn’t load. Reload the page to try again.</li>`; });
-</script>
+    <script is:inline>
+      const LINES = [
+        { id: "c1", label: "Under 5 min", min: 0, max: 1200 },
+        { id: "c2", label: "5–10 min", min: 1200, max: 2400 },
+        { id: "c3", label: "10–20 min", min: 2400, max: 4800 },
+        { id: "c4", label: "20–30 min", min: 4800, max: 7200 },
+        { id: "c5", label: "30–45 min", min: 7200, max: 10800 },
+        { id: "c6", label: "45 min+", min: 10800, max: Infinity },
+        { id: "c0", label: "Length unknown", unknown: true },
+      ];
+      const PAGE = 120, WPM = 240;
+      const $ = (id) => document.getElementById(id);
+      const store = {
+        get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } },
+        set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
+      };
+      let DATA = [], line = store.get("line", "all"), hidden = new Set(store.get("hidden", [])), showHidden = false, shown = PAGE, pick = null;
+      const fmt = (n) => n.toLocaleString("en-US");
+      const minutes = (w) => Math.max(1, Math.round(w / WPM));
+      const lineOf = (w) => w == null ? LINES[6] : LINES.find((l) => !l.unknown && w >= l.min && w < l.max);
+      const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+      const date = (d) => new Date(d + "T12:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+      const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>';
 
+      function bullet(s, extra = "") {
+        if (s.w == null) return `<span class="bullet c0 ${extra}" aria-label="Length unknown">?</span>`;
+        const m = minutes(s.w);
+        return `<span class="bullet ${s.line.id} ${m >= 100 ? "long" : ""} ${extra}" aria-label="${m} minute read">${m}</span>`;
+      }
+
+      function scoped() {
+        const q = $("q").value.trim().toLowerCase(), dec = $("decade").value;
+        const fo = $("fictionOnly").checked, mo = $("modern").checked;
+        return DATA.filter((s) =>
+          (!dec || Math.floor(s.y / 10) * 10 == dec) &&
+          (!fo || s.f === "F") && (!mo || s.y >= 1993) &&
+          (showHidden ? hidden.has(s.p) : !hidden.has(s.p)) &&
+          (!q || s.lc.includes(q)));
+      }
+
+      function filtered(base) {
+        let r = line === "all" ? base : base.filter((s) => s.line.id === line);
+        const so = $("sort").value;
+        if (so === "long") r = r.filter((s) => s.w != null).reverse().concat(r.filter((s) => s.w == null));
+        else if (so === "new") r = r.slice().sort((a, b) => b.d.localeCompare(a.d));
+        else if (so === "old") r = r.slice().sort((a, b) => a.d.localeCompare(b.d));
+        return r;
+      }
+
+      function renderLines(base) {
+        const counts = {};
+        base.forEach((s) => (counts[s.line.id] = (counts[s.line.id] || 0) + 1));
+        $("lines").innerHTML =
+          `<button class="line all" type="button" data-l="all" aria-pressed="${line === "all"}">All <span class="n">${fmt(base.length)}</span></button>` +
+          LINES.map((l) => `<button class="line" type="button" data-l="${l.id}" aria-pressed="${line === l.id}"><span class="bullet sm ${l.id}" aria-hidden="true"></span>${l.label} <span class="n">${fmt(counts[l.id] || 0)}</span></button>`).join("");
+      }
+
+      function row(s) {
+        return `<li class="stop" data-p="${esc(s.p)}" data-w="${s.w ?? ""}">
+          ${bullet(s)}
+          <div class="body">
+            <a class="t" href="https://www.newyorker.com${esc(s.p)}" target="_blank" rel="noopener">${esc(s.t)}</a>
+            <div class="by"><span>${esc(s.a || "Unknown author")} ·</span><span class="nw">${date(s.d)}</span>${s.f === "F" ? '<span class="tag" title="Known mainly for novels or short stories">Fiction writer</span>' : ""}<button class="hide" type="button">${hidden.has(s.p) ? "Unhide" : "Hide"}</button></div>
+            ${s.k ? `<p class="dek">${esc(s.k)}</p>` : ""}
+          </div>
+          <div class="len">
+            <span>${s.w == null ? '<span class="w">—</span> <span class="u">scan only</span>' : `<span class="w num">${fmt(s.w)}</span> <span class="u">words</span>`}</span>
+            <button class="hide hide-m" type="button">${hidden.has(s.p) ? "Unhide" : "Hide"}</button>
+          </div>
+        </li>`;
+      }
+
+      function renderToday() {
+        if (!pick) { $("today").innerHTML = ""; return; }
+        const s = pick;
+        $("today").innerHTML = `<section class="today" aria-label="Today’s pick">
+          <span class="where">Today</span>
+          ${bullet(s)}
+          <div>
+            <h2>${esc(s.t)}</h2>
+            <div class="meta">${esc(s.a || "Unknown author")} · ${date(s.d)} · ${s.w == null ? "length unknown" : `${fmt(s.w)} words, about ${minutes(s.w)} min`}</div>
+          </div>
+          <div class="acts">
+            <a class="go" href="https://www.newyorker.com${esc(s.p)}" target="_blank" rel="noopener">Read on newyorker.com ${arrow}</a>
+            <button type="button" id="again">Pick another</button>
+          </div>
+        </section>`;
+        $("again").addEventListener("click", doPick);
+      }
+
+      function render() {
+        const base = scoped();
+        renderLines(base);
+        const r = filtered(base);
+        $("count").textContent = `${fmt(r.length)} ${r.length === 1 ? "story" : "stories"}`;
+        const list = $("list");
+        if (!r.length) {
+          list.innerHTML = `<li class="empty">No stories on this line with these filters. Try another line or clear the search.</li>`;
+          $("more").hidden = true;
+        } else {
+          const so = $("sort").value, signed = so === "short" || so === "long";
+          let prev = null;
+          list.innerHTML = r.slice(0, shown).map((s) => {
+            let h = "";
+            if (signed && s.line !== prev) h = `<li class="sign" aria-hidden="true"><span class="bullet sm ${s.line.id}"></span>${s.line.label}</li>`;
+            prev = s.line;
+            return h + row(s);
+          }).join("");
+          $("more").hidden = r.length <= shown;
+          $("more").textContent = `Show ${fmt(Math.min(PAGE, r.length - shown))} more of ${fmt(r.length - shown)}`;
+        }
+        renderToday();
+        updateSpan();
+      }
+
+      // Guide words: the word span currently in view
+      function updateSpan() {
+        const top = $("list").closest("main").querySelector(".stops").getBoundingClientRect().top;
+        const barBottom = document.querySelector(".controls").getBoundingClientRect().bottom;
+        const rows = [...document.querySelectorAll(".stop")];
+        const vis = rows.filter((li) => { const b = li.getBoundingClientRect(); return b.bottom > barBottom && b.top < innerHeight; });
+        const ws = vis.map((li) => li.dataset.w).filter(Boolean).map(Number);
+        $("span").textContent = ws.length ? `In view: ${fmt(Math.min(...ws))}–${fmt(Math.max(...ws))} words` : "";
+      }
+      let raf = 0;
+      addEventListener("scroll", () => { if (!raf) raf = requestAnimationFrame(() => { raf = 0; updateSpan(); }); }, { passive: true });
+
+      function hiddenLink() {
+        const b = $("showHidden");
+        b.hidden = !hidden.size && !showHidden;
+        b.textContent = showHidden ? "Back to the list" : `Hidden (${hidden.size})`;
+      }
+
+      function reset() { shown = PAGE; render(); }
+
+      function doPick() {
+        const r = filtered(scoped());
+        if (!r.length) return;
+        let next = r[Math.floor(Math.random() * r.length)];
+        if (r.length > 1 && next === pick) next = r[(r.indexOf(next) + 1) % r.length];
+        pick = next;
+        renderToday();
+        const t = $("today").getBoundingClientRect().top + scrollY - document.querySelector(".controls").offsetHeight - 12;
+        scrollTo({ top: t, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+      }
+
+      $("lines").addEventListener("click", (e) => {
+        const b = e.target.closest(".line"); if (!b) return;
+        line = b.dataset.l; store.set("line", line); reset();
+      });
+      ["q", "decade", "sort", "fictionOnly", "modern"].forEach((id) => $(id).addEventListener("input", reset));
+      $("pick").addEventListener("click", doPick);
+      $("more").addEventListener("click", () => { shown += PAGE; render(); });
+      $("showHidden").addEventListener("click", () => { showHidden = !showHidden; hiddenLink(); reset(); });
+      $("list").addEventListener("click", (e) => {
+        const b = e.target.closest("button.hide"); if (!b) return;
+        const p = b.closest(".stop").dataset.p;
+        hidden.has(p) ? hidden.delete(p) : hidden.add(p);
+        store.set("hidden", [...hidden]); hiddenLink(); render();
+      });
+
+      function figures() {
+        $("total").textContent = fmt(DATA.length);
+        $("key").innerHTML = LINES.map((l) => `<span><i class="bullet sm ${l.id}" aria-hidden="true"></i>${l.label}</span>`).join("");
+      }
+
+      fetch("/data.json").then((r) => r.json()).then((rows) => {
+        DATA = rows.map((r) => {
+          const s = { t: r[0], a: r[1], y: r[2], d: r[3], w: r[4], p: r[5], k: r[6], f: r[7], lc: (r[0] + " " + r[1]).toLowerCase() };
+          s.line = lineOf(s.w);
+          return s;
+        });
+        const decs = [...new Set(DATA.map((s) => Math.floor(s.y / 10) * 10))].sort();
+        $("decade").insertAdjacentHTML("beforeend", decs.map((d) => `<option value="${d}">${d}s</option>`).join(""));
+        if (!["all", ...LINES.map((l) => l.id)].includes(line)) line = "all";
+        figures(); hiddenLink(); render();
+      }).catch(() => {
+        $("list").innerHTML = `<li class="empty">The story list didn’t load. Check your connection and reload the page.</li>`;
+      });
+    </script>
   </body>
 </html>
