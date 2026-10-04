@@ -47,14 +47,22 @@
         --l0: #808183; /* length unknown */
 
         --sans: "Heros", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        /* type ramp */
+        --fs-tag: 10px;
+        --fs-caption: 13px;
+        --fs-meta: 14px;
+        --fs-secondary: 15px;
+        --fs-body: 16px;
+        --fs-numeral: 18px;
+        --fs-title: 19px;
         --gutter: clamp(16px, 4vw, 40px);
         --max: 1080px;
         color-scheme: light;
       }
 
       * { box-sizing: border-box; }
-      html { -webkit-text-size-adjust: 100%; scrollbar-color: var(--ink-2) var(--ground); }
-      body { margin: 0; background: var(--ground); color: var(--ink); font: 400 16px/1.45 var(--sans); font-kerning: normal; -webkit-font-smoothing: antialiased; }
+      html { -webkit-text-size-adjust: 100%; scrollbar-color: var(--ink-2) var(--ground); scrollbar-gutter: stable; }
+      body { margin: 0; min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; background: var(--ground); color: var(--ink); font: 400 var(--fs-body)/1.45 var(--sans); font-kerning: normal; -webkit-font-smoothing: antialiased; }
       ::selection { background: var(--l3); color: #111; }
       a { color: inherit; }
       :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
@@ -67,14 +75,14 @@
       .masthead { padding-block: 44px 32px; }
       .masthead h1 { margin: 0; font-weight: 700; font-size: clamp(32px, 5vw, 56px); line-height: 1.02; letter-spacing: -0.01em; text-wrap: balance; }
       .standfirst { margin: 14px 0 0; font-size: clamp(17px, 2vw, 20px); line-height: 1.35; max-width: 70ch; }
-      .indie { margin: 12px 0 0; font-size: 13px; color: var(--band-ink-2); }
+      .indie { margin: 12px 0 0; font-size: var(--fs-caption); color: var(--band-ink-2); }
 
       /* Route bullets */
-      .bullet { --c: var(--l0); --fg: #fff; flex: none; display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--c); color: var(--fg); font-weight: 700; font-size: 18px; letter-spacing: -0.02em; line-height: 1; font-variant-numeric: tabular-nums; }
-      .bullet.sm { width: 22px; height: 22px; font-size: 11px; }
+      .bullet { --c: var(--l0); --fg: #fff; flex: none; display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--c); color: var(--fg); font-weight: 700; font-size: var(--fs-numeral); letter-spacing: -0.02em; line-height: 1; font-variant-numeric: tabular-nums; }
+      .bullet.sm { width: 22px; height: 22px; }
       .bullet.c1 { --c: var(--l1); } .bullet.c2 { --c: var(--l2); } .bullet.c3 { --c: var(--l3); --fg: #111; }
       .bullet.c4 { --c: var(--l4); } .bullet.c5 { --c: var(--l5); } .bullet.c6 { --c: var(--l6); } .bullet.c0 { --c: var(--l0); }
-      .bullet.long { font-size: 15px; }
+      .bullet.long { font-size: var(--fs-secondary); }
 
       /* Control strip */
       .controls { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: var(--ground); border-bottom: 2px solid var(--rule-strong); }
@@ -82,25 +90,30 @@
       .toolbar { display: grid; gap: 12px; padding-block: 22px 16px; }
       .lines { display: flex; flex-wrap: wrap; gap: 6px; }
       .lines::-webkit-scrollbar { display: none; }
-      .line { flex: none; display: inline-flex; align-items: center; gap: 8px; height: 38px; padding: 0 12px 0 8px; border: 1.5px solid var(--rule-strong); background: var(--ground); color: var(--ink); font: 700 14px var(--sans); cursor: pointer; white-space: nowrap; }
+      .line { flex: none; display: inline-flex; align-items: center; gap: 8px; height: 38px; padding: 0 12px 0 8px; border: 1.5px solid var(--rule-strong); background: var(--ground); color: var(--ink); font: 700 var(--fs-meta) var(--sans); cursor: pointer; white-space: nowrap; }
       .line .n { font-weight: 400; color: var(--ink-2); font-variant-numeric: tabular-nums; }
       .line:hover { background: var(--hover); }
       .line[aria-pressed="true"] { background: var(--ink); color: var(--ground); }
       .line[aria-pressed="true"] .n { color: inherit; opacity: 0.7; }
       .line.all { padding-left: 12px; }
+      .line.zero:not([aria-pressed="true"]) { color: var(--ink-2); border-color: var(--rule); }
+      .line.zero .bullet { opacity: 0.35; }
       .tools { display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: center; }
       .tools input[type="search"] { flex: 1 1 220px; min-width: 0; }
-      input[type="search"], select { font: 400 15px var(--sans); color: var(--ink); background: var(--ground); border: 1.5px solid var(--rule-strong); border-radius: 0; height: 38px; padding: 0 10px; }
+      input[type="search"], select { font: 400 var(--fs-body) var(--sans); color: var(--ink); background: var(--ground); border: 1.5px solid var(--rule-strong); border-radius: 0; height: 38px; padding: 0 10px; }
       select { padding-right: 28px; appearance: none; background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%); background-position: right 14px center, right 9px center; background-size: 5px 5px; background-repeat: no-repeat; }
       input::placeholder { color: var(--ink-2); }
-      .checks { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; }
+      .checks { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: var(--fs-meta); }
       .checks label { display: inline-flex; gap: 7px; align-items: center; cursor: pointer; }
       input[type="checkbox"] { width: 16px; height: 16px; margin: 0; accent-color: var(--ink); }
-      .pick { display: inline-flex; align-items: center; gap: 8px; height: 34px; padding: 0 12px; border: 0; background: var(--ink); color: var(--ground); font: 700 14px var(--sans); cursor: pointer; }
+      .pick { display: inline-flex; align-items: center; gap: 8px; height: 34px; padding: 0 12px; border: 0; background: var(--ink); color: var(--ground); font: 700 var(--fs-meta) var(--sans); cursor: pointer; }
+      .pick:disabled { background: var(--rule); color: var(--ink-2); cursor: not-allowed; }
       .pick svg { width: 16px; height: 16px; }
       .pick .short { display: none; }
-      .pick:hover { background: var(--focus); color: #fff; }
-      .status { display: flex; justify-content: space-between; gap: 14px; align-items: center; font-size: 13px; color: var(--ink-2); white-space: nowrap; }
+      .pick:not(:disabled):hover { background: var(--focus); color: #fff; }
+      .status { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 14px; align-items: center; font-size: var(--fs-caption); color: var(--ink-2); }
+      .status > span:first-child { white-space: nowrap; }
+      .status .right { margin-left: auto; white-space: nowrap; }
       .status .right { display: inline-flex; gap: 14px; align-items: center; }
       .status b { color: var(--ink); font-weight: 700; }
 
@@ -110,9 +123,9 @@
       .today .where { font-weight: 700; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.02em; }
       .today .bullet { width: 64px; height: 64px; font-size: 26px; }
       .today h2 { margin: 0; font-size: clamp(22px, 3vw, 32px); line-height: 1.1; letter-spacing: -0.02em; text-wrap: balance; }
-      .today .meta { font-size: 14px; color: var(--band-ink-2); margin-top: 4px; }
+      .today .meta { font-size: var(--fs-meta); color: var(--band-ink-2); margin-top: 4px; }
       .today .acts { grid-column: 3; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-      .today a.go, .today button { display: inline-flex; align-items: center; gap: 8px; height: 38px; padding: 0 14px; font: 700 14px var(--sans); text-decoration: none; cursor: pointer; }
+      .today a.go, .today button { display: inline-flex; align-items: center; gap: 8px; height: 38px; padding: 0 14px; font: 700 var(--fs-meta) var(--sans); text-decoration: none; cursor: pointer; }
       .today a.go { background: var(--band-ink); color: #111; }
       .today button { background: transparent; color: var(--band-ink); border: 1.5px solid var(--band-ink); }
       .today a.go svg { width: 16px; height: 16px; }
@@ -125,43 +138,49 @@
       ol.stops { list-style: none; margin: 8px 0 0; padding: 0; }
       .stop { display: grid; grid-template-columns: 44px 1fr auto; gap: 4px 18px; padding: 13px 0; border-bottom: 1px solid var(--rule); align-items: start; }
       .stop .body { min-width: 0; }
-      .stop a.t { font-weight: 700; font-size: 19px; line-height: 1.2; letter-spacing: -0.01em; text-decoration: none; }
+      .stop a.t { font-weight: 700; font-size: var(--fs-title); line-height: 1.2; letter-spacing: -0.01em; text-decoration: none; }
       .stop a.t:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
-      .by { margin-top: 3px; font-size: 14px; color: var(--ink-2); display: flex; flex-wrap: wrap; align-items: center; gap: 3px 5px; }
+      .by { margin-top: 3px; font-size: var(--fs-meta); color: var(--ink-2); display: flex; flex-wrap: wrap; align-items: center; gap: 3px 5px; }
       .by .nw { white-space: nowrap; }
       .hide-m { display: none; }
-      .tag { display: inline-block; padding: 1px 5px 0; background: var(--ink); color: var(--ground); font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; vertical-align: 1px; }
-      .dek { margin: 6px 0 0; font-size: 15px; line-height: 1.45; color: var(--ink-2); max-width: 68ch; }
+      .tag { display: inline-block; padding: 1px 5px 0; background: var(--ink); color: var(--ground); font-size: var(--fs-tag); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; vertical-align: 1px; }
+      .dek { margin: 6px 0 0; font-size: var(--fs-secondary); line-height: 1.45; color: var(--ink-2); max-width: 68ch; }
       .len { text-align: right; white-space: nowrap; padding-top: 2px; }
-      .len .w { font-weight: 700; font-size: 16px; }
-      .len .u { font-size: 13px; color: var(--ink-2); }
-      .hide { font: 400 12px var(--sans); color: var(--ink-2); background: none; border: 0; padding: 0; text-decoration: underline; text-underline-offset: 2px; cursor: pointer; }
+      .len .w { font-weight: 700; font-size: var(--fs-body); }
+      .len .u { font-size: var(--fs-caption); color: var(--ink-2); }
+      .hide { font: 400 var(--fs-caption) var(--sans); color: var(--ink-2); background: none; border: 0; padding: 8px 2px; margin: -8px -2px; text-decoration: underline; text-underline-offset: 2px; cursor: pointer; }
       .hide:hover { color: var(--ink); }
-      .empty { padding: 48px 0; font-size: 20px; }
-      .sign { display: flex; align-items: center; gap: 10px; margin-top: 22px; padding: 10px 0 8px; border-top: 5px solid var(--ink); border-bottom: 1px solid var(--ink); color: var(--ink); font-weight: 700; font-size: 15px; }
+      .empty { padding: 48px 0; display: grid; gap: 16px; justify-items: start; }
+      .empty p { margin: 0; font-size: clamp(17px, 2vw, 20px); max-width: 48ch; }
+      .empty button { height: 38px; padding: 0 14px; border: 1.5px solid var(--rule-strong); background: var(--ground); color: var(--ink); font: 700 var(--fs-meta) var(--sans); cursor: pointer; }
+      .empty button:hover { background: var(--hover); }
+      .note { display: inline-flex; flex-wrap: wrap; gap: 0 8px; align-items: center; min-width: 0; color: var(--ink); }
+      .note button { font: 700 var(--fs-caption) var(--sans); color: var(--focus); background: none; border: 0; padding: 8px 2px; margin: -8px -2px; text-decoration: underline; text-underline-offset: 2px; cursor: pointer; }
+      .sign { display: flex; align-items: center; gap: 10px; margin-top: 22px; padding: 10px 0 8px; border-top: 5px solid var(--ink); border-bottom: 1px solid var(--ink); color: var(--ink); font-weight: 700; font-size: var(--fs-secondary); }
       .more { display: flex; justify-content: center; padding-block: 28px 8px; }
-      .more button { height: 42px; padding: 0 20px; border: 1.5px solid var(--rule-strong); background: var(--ground); color: var(--ink); font: 700 15px var(--sans); cursor: pointer; }
+      .more button { height: 42px; padding: 0 20px; border: 1.5px solid var(--rule-strong); background: var(--ground); color: var(--ink); font: 700 var(--fs-secondary) var(--sans); cursor: pointer; }
       .more button:hover { background: var(--hover); }
 
+      main { flex: 1 0 auto; width: 100%; }
       footer.band { margin-top: 64px; }
-      footer .wrap { padding-block: 40px 48px; display: grid; gap: 14px; font-size: 14px; line-height: 1.55; color: var(--band-ink-2); }
+      footer .wrap { padding-block: 40px 48px; display: grid; gap: 14px; font-size: var(--fs-meta); line-height: 1.55; color: var(--band-ink-2); }
       footer p { margin: 0; max-width: 72ch; }
       footer b { color: var(--band-ink); }
       footer a { color: var(--band-ink); text-underline-offset: 3px; }
-      footer .key { display: flex; flex-wrap: wrap; gap: 10px 18px; color: var(--band-ink); font-size: 13px; }
+      footer .key { display: flex; flex-wrap: wrap; gap: 10px 18px; color: var(--band-ink); font-size: var(--fs-caption); }
       footer .key span { display: inline-flex; gap: 8px; align-items: center; }
 
       @media (max-width: 640px) {
         .masthead { padding-block: 34px 26px; }
         .stop { grid-template-columns: 36px 1fr auto; gap: 4px 12px; }
-        .stop .bullet { width: 36px; height: 36px; font-size: 15px; }
-        .stop .bullet.long { font-size: 12px; }
+        .stop .bullet { width: 36px; height: 36px; font-size: var(--fs-secondary); }
+        .stop .bullet.long { font-size: var(--fs-caption); }
         .stop a.t { font-size: 17px; }
         .by .hide { display: none; }
         .len { display: grid; justify-items: end; align-content: start; gap: 10px; }
         .hide-m { display: inline; }
         .lines { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); }
-        .line { height: 34px; font-size: 13px; }
+        .line { height: 34px; font-size: var(--fs-caption); }
         .toolbar { padding-block: 18px 12px; }
         .toolbar .tools { display: grid; grid-template-columns: 1fr 1fr; }
         .toolbar .tools input[type="search"] { grid-column: 1 / -1; }
@@ -205,8 +224,8 @@
       <div class="wrap">
         <div class="lines" id="lines" role="group" aria-label="Reading time"></div>
         <div class="status">
-          <span id="span" class="num"></span>
-          <span class="right"><button class="hide" id="showHidden" type="button" hidden></button><b id="count" class="num"></b>
+          <span id="span" class="num" aria-hidden="true"></span><span class="note" id="note" role="status" hidden></span>
+          <span class="right"><button class="hide" id="showHidden" type="button" hidden></button><b id="count" class="num" aria-live="polite"></b>
             <button class="pick" id="pick" type="button" aria-label="Pick one for today"><span class="full">Pick one for today</span><span class="short">Pick one</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" /></svg>
             </button></span>
@@ -216,7 +235,7 @@
 
     <main class="wrap">
       <div id="today"></div>
-      <ol class="stops" id="list" aria-live="polite"></ol>
+      <ol class="stops" id="list"><li class="empty"><p>Loading the story list…</p></li></ol>
       <div class="more"><button id="more" type="button" hidden>Show more</button></div>
     </main>
 
@@ -283,7 +302,7 @@
         base.forEach((s) => (counts[s.line.id] = (counts[s.line.id] || 0) + 1));
         $("lines").innerHTML =
           `<button class="line all" type="button" data-l="all" aria-pressed="${line === "all"}">All <span class="n">${fmt(base.length)}</span></button>` +
-          LINES.map((l) => `<button class="line" type="button" data-l="${l.id}" aria-pressed="${line === l.id}"><span class="bullet sm ${l.id}" aria-hidden="true"></span>${l.label} <span class="n">${fmt(counts[l.id] || 0)}</span></button>`).join("");
+          LINES.map((l) => `<button class="line${counts[l.id] ? "" : " zero"}" type="button" data-l="${l.id}" aria-pressed="${line === l.id}"><span class="bullet sm ${l.id}" aria-hidden="true"></span>${l.label} <span class="n">${fmt(counts[l.id] || 0)}</span></button>`).join("");
       }
 
       function row(s) {
@@ -325,15 +344,23 @@
         const r = filtered(base);
         $("count").textContent = `${fmt(r.length)} ${r.length === 1 ? "story" : "stories"}`;
         const list = $("list");
+        $("pick").disabled = !r.length;
         if (!r.length) {
-          list.innerHTML = `<li class="empty">No stories on this line with these filters. Try another line or clear the search.</li>`;
+          const q = $("q").value.trim();
+          const msg = showHidden ? "You haven’t hidden any stories."
+            : q ? `No stories match “${esc(q)}” with these filters.`
+            : line !== "all" && base.length ? "No stories on this line with these filters. Try another line."
+            : "No stories match these filters.";
+          list.innerHTML = `<li class="empty"><p>${msg}</p>${showHidden ? "" : '<button type="button" id="clear">Clear search and filters</button>'}</li>`;
+          $("clear")?.addEventListener("click", clearAll);
           $("more").hidden = true;
         } else {
           const so = $("sort").value, signed = so === "short" || so === "long";
           let prev = null;
-          list.innerHTML = r.slice(0, shown).map((s) => {
+          const head = showHidden ? `<li class="sign">Hidden stories: ${fmt(r.length)}. Use Unhide to put one back on the list.</li>` : "";
+          list.innerHTML = head + r.slice(0, shown).map((s) => {
             let h = "";
-            if (signed && s.line !== prev) h = `<li class="sign" aria-hidden="true"><span class="bullet sm ${s.line.id}"></span>${s.line.label}</li>`;
+            if (signed && !showHidden && s.line !== prev) h = `<li class="sign" aria-hidden="true"><span class="bullet sm ${s.line.id}"></span>${s.line.label}</li>`;
             prev = s.line;
             return h + row(s);
           }).join("");
@@ -351,7 +378,8 @@
         const rows = [...document.querySelectorAll(".stop")];
         const vis = rows.filter((li) => { const b = li.getBoundingClientRect(); return b.bottom > barBottom && b.top < innerHeight; });
         const ws = vis.map((li) => li.dataset.w).filter(Boolean).map(Number);
-        $("span").textContent = ws.length ? `In view: ${fmt(Math.min(...ws))}–${fmt(Math.max(...ws))} words` : "";
+        const lo = Math.min(...ws), hi = Math.max(...ws);
+        $("span").textContent = !ws.length ? "" : lo === hi ? `In view: ${fmt(lo)} words` : `In view: ${fmt(lo)}–${fmt(hi)} words`;
       }
       let raf = 0;
       addEventListener("scroll", () => { if (!raf) raf = requestAnimationFrame(() => { raf = 0; updateSpan(); }); }, { passive: true });
@@ -363,6 +391,21 @@
       }
 
       function reset() { shown = PAGE; render(); }
+
+      function clearAll() {
+        $("q").value = ""; $("decade").value = ""; $("fictionOnly").checked = false; $("modern").checked = false;
+        line = "all"; store.set("line", line); reset(); $("q").focus();
+      }
+
+      let noteTimer = 0;
+      function note(html, onUndo) {
+        const n = $("note");
+        n.innerHTML = html + (onUndo ? ' <button type="button">Undo</button>' : "");
+        n.hidden = false; $("span").hidden = true;
+        if (onUndo) n.querySelector("button").addEventListener("click", () => { onUndo(); hideNote(); });
+        clearTimeout(noteTimer); noteTimer = setTimeout(hideNote, 6000);
+      }
+      function hideNote() { $("note").hidden = true; $("span").hidden = false; }
 
       function doPick() {
         const r = filtered(scoped());
@@ -386,8 +429,10 @@
       $("list").addEventListener("click", (e) => {
         const b = e.target.closest("button.hide"); if (!b) return;
         const p = b.closest(".stop").dataset.p;
-        hidden.has(p) ? hidden.delete(p) : hidden.add(p);
-        store.set("hidden", [...hidden]); hiddenLink(); render();
+        const was = hidden.has(p), t = DATA.find((s) => s.p === p)?.t || "Story";
+        const toggle = () => { hidden.has(p) ? hidden.delete(p) : hidden.add(p); store.set("hidden", [...hidden]); hiddenLink(); render(); };
+        toggle();
+        note(`${was ? "Back on the list" : "Hidden"}: “${esc(t)}”.`, toggle);
       });
 
       function figures() {

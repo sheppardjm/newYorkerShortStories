@@ -50,6 +50,21 @@ typography:
     fontSize: "16px"
     fontWeight: 400
     lineHeight: 1.45
+  title-sm:
+    fontFamily: "Heros, Helvetica Neue, Helvetica, Arial, sans-serif"
+    fontSize: "17px"
+    fontWeight: 700
+    lineHeight: 1.2
+    letterSpacing: "-0.01em"
+  secondary:
+    fontFamily: "Heros, Helvetica Neue, Helvetica, Arial, sans-serif"
+    fontSize: "15px"
+    fontWeight: 400
+    lineHeight: 1.45
+  caption:
+    fontFamily: "Heros, Helvetica Neue, Helvetica, Arial, sans-serif"
+    fontSize: "13px"
+    fontWeight: 400
   meta:
     fontFamily: "Heros, Helvetica Neue, Helvetica, Arial, sans-serif"
     fontSize: "14px"
@@ -65,6 +80,12 @@ typography:
     lineHeight: 1
     letterSpacing: "-0.02em"
     fontFeature: "\"tnum\" 1, \"lnum\" 1"
+  numeral-lg:
+    fontFamily: "Heros, Helvetica Neue, Helvetica, Arial, sans-serif"
+    fontSize: "26px"
+    fontWeight: 700
+    lineHeight: 1
+    letterSpacing: "-0.02em"
   tag:
     fontFamily: "Heros, Helvetica Neue, Helvetica, Arial, sans-serif"
     fontSize: "10px"
