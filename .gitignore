@@ -11,3 +11,5 @@ __pycache__/
 .impeccable/questions/
 .impeccable/brief-index.md
 .impeccable/direction-round.json
+pipeline/data/review/
+.codex/

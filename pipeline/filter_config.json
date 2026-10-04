@@ -1,0 +1,11 @@
+{
+  "flash_max_words": 1000,
+  "review_ceiling_words": 2500,
+  "review_humorist_authors": true,
+  "batch_size": 175,
+  "keep": [
+    "/magazine/1976/01/19/a-fresno-fable",
+    "/magazine/1981/06/01/the-gift-of-the-prodigal"
+  ],
+  "protect_fiction_writers": true
+}

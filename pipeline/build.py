@@ -5,16 +5,25 @@ a=json.load(open('art.json')); u=json.load(open('urls.json'))
 from rules import classify
 cls=json.load(open('cls.json')) if os.path.exists('cls.json') else {}
 dropped={}
-KEEP={'/magazine/1976/01/19/a-fresno-fable','/magazine/1981/06/01/the-gift-of-the-prodigal'}  # user exceptions
+CFG=json.load(open('../filter_config.json'))
+KEEP=set(CFG['keep'])  # owner's exceptions to every filter
+FLASH_MAX=CFG['flash_max_words']  # at or under this is flash fiction
 import glob
 verdict={}
-for fn in glob.glob('judgments/*.out.tsv'):
+for fn in sorted(glob.glob('judgments/*.out.tsv')):
     for line in open(fn):
         parts=line.rstrip('\n').split('\t')
         if len(parts)==2: verdict[parts[0]]=parts[1].strip()
 flash=json.load(open('flash.json'))
 for p in flash: a.pop(p, None)  # user excludes the New Yorker's Flash Fiction series
 rows=[]; seen=set()
+authlab={a:'F' for a in json.load(open('auth_auto.json'))} if os.path.exists('auth_auto.json') else {}
+for fn in sorted(glob.glob('judgments/auth*.out.tsv')):
+    for line in open(fn):
+        p=line.rstrip('\n').split('\t')
+        if len(p)==2: authlab[p[0]]=p[1].strip()
+def mainauth(a): return re.split(r',\s*|\s+and\s+',a or '')[0].strip()
+PROTECT_F=CFG.get('protect_fiction_writers', True)  # known fiction writers bypass the flash and story/not-story filters
 for path,v in a.items():
     if not v or v.get('missing'): continue
     src=u.get(path,'listing')
@@ -39,17 +48,12 @@ for path,v in a.items():
     seen.add(key)
     k=classify(v, cls.get(path))
     if path not in KEEP and k in ('visual','poem'): dropped[k]=dropped.get(k,0)+1; continue
-    if path not in KEEP and verdict.get(path)=='N': dropped['not_story']=dropped.get('not_story',0)+1; continue
+    fic = PROTECT_F and authlab.get(mainauth(v.get('author')),'U')=='F'
+    if path not in KEEP and not fic and verdict.get(path)=='N': dropped['not_story']=dropped.get('not_story',0)+1; continue
     w=None if k=='unknown' else int(w)
-    if path not in KEEP and w is not None and w<500: dropped['under500']=dropped.get('under500',0)+1; continue
+    if path not in KEEP and not fic and w is not None and w<=FLASH_MAX: dropped['flash']=dropped.get('flash',0)+1; continue
     if src=='flash': t+=' (Flash Fiction series)'
     rows.append([t,v['author'],int(dm.group(1)),f"{dm.group(1)}-{dm.group(2)}-{dm.group(3)}",w,path,d])
-authlab={a:'F' for a in json.load(open('auth_auto.json'))} if os.path.exists('auth_auto.json') else {}
-for fn in glob.glob('judgments/auth*.out.tsv'):
-    for line in open(fn):
-        p=line.rstrip('\n').split('\t')
-        if len(p)==2: authlab[p[0]]=p[1].strip()
-def mainauth(a): return re.split(r',\s*|\s+and\s+',a or '')[0].strip()
 for r in rows: r.append(authlab.get(mainauth(r[1]),'U'))
 rows.sort(key=lambda r:(r[4] is None, r[4] or 0, r[3]))
 json.dump(rows,open('../../public/data.json','w'),ensure_ascii=False,separators=(',',':'))

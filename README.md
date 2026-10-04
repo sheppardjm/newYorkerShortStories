@@ -33,7 +33,7 @@ Python 3, standard library only. Cached crawl results live in `pipeline/data/`, 
 ### What's excluded
 
 - Anything before 1940. The archive labels nearly every early humor piece and column as fiction.
-- Pieces under 500 words, except "A Fresno Fable."
+- Flash fiction: pieces of 1,000 words or fewer, the ceiling SmokeLong Quarterly, Wigleaf and Best Small Fictions use. Known fiction writers are exempt from this cutoff and from the humor review, and so is "A Fresno Fable." The cutoff lives in `pipeline/filter_config.json`, and the `short-story-filter` skill (`.claude/skills/`) describes the full review.
 - The online Flash Fiction series.
 - Poems, cartoon and art features, and humor sketches, parodies and essays filed under fiction.
 
