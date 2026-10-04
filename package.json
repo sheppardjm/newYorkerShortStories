@@ -1,0 +1,14 @@
+{
+  "name": "new-yorker-stories",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "data": "cd pipeline && python3 build.py"
+  },
+  "dependencies": {
+    "astro": "^7.3.5"
+  }
+}
