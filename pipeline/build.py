@@ -55,9 +55,13 @@ for path,v in a.items():
     if src=='flash': t+=' (Flash Fiction series)'
     rows.append([t,v['author'],int(dm.group(1)),f"{dm.group(1)}-{dm.group(2)}-{dm.group(3)}",w,path,d])
 for r in rows: r.append(authlab.get(mainauth(r[1]),'U'))
+club={k:v for k,v in json.load(open('story_club.json')).items() if not k.startswith('_') and v['kind']=='taught'}  # stories taught on Saunders's Story Club; passing mentions stay in the file but off the site
+for r in rows: c=club.get(r[5]); r.append([c['kind'],c['post']] if c else 0)
+missing=set(club)-{r[5] for r in rows}
+if missing: print('story_club.json paths not in the list:', sorted(missing))
 rows.sort(key=lambda r:(r[4] is None, r[4] or 0, r[3]))
 json.dump(rows,open('../../public/data.json','w'),ensure_ascii=False,separators=(',',':'))
 with open('../../public/new_yorker_stories_by_word_count.csv','w',newline='') as f:
-    wr=csv.writer(f); wr.writerow(['rank','words','title','author','known_fiction_writer','issue_date','url','summary'])
-    for i,r in enumerate(rows,1): wr.writerow([i if r[4] else '',r[4] or 'unknown (archive scan only)',r[0],r[1],{'F':'yes','H':'no'}.get(r[7],'unknown'),r[3],'https://www.newyorker.com'+r[5],r[6]])
+    wr=csv.writer(f); wr.writerow(['rank','words','title','author','known_fiction_writer','issue_date','url','summary','story_club'])
+    for i,r in enumerate(rows,1): wr.writerow([i if r[4] else '',r[4] or 'unknown (archive scan only)',r[0],r[1],{'F':'yes','H':'no'}.get(r[7],'unknown'),r[3],'https://www.newyorker.com'+r[5],r[6],r[8][0] if r[8] else ''])
 print(dropped, len(rows), 'unknown', sum(1 for r in rows if r[4] is None))

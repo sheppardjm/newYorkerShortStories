@@ -144,6 +144,8 @@
       .by .nw { white-space: nowrap; }
       .hide-m { display: none; }
       .tag { display: inline-block; padding: 1px 5px 0; background: var(--ink); color: var(--ground); font-size: var(--fs-tag); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; vertical-align: 1px; }
+      a.tag { text-decoration: none; }
+      a.tag:hover { background: var(--focus); }
       .dek { margin: 6px 0 0; font-size: var(--fs-secondary); line-height: 1.45; color: var(--ink-2); max-width: 68ch; }
       .len { text-align: right; white-space: nowrap; padding-top: 2px; }
       .len .w { font-weight: 700; font-size: var(--fs-body); }
@@ -217,6 +219,7 @@
       <div class="checks">
         <label><input type="checkbox" id="fictionOnly" /> Known fiction writers only</label>
         <label><input type="checkbox" id="modern" /> 1993 and later</label>
+        <label><input type="checkbox" id="club" /> Discussed in Story Club</label>
       </div>
     </section>
 
@@ -244,6 +247,7 @@
         <div class="key" id="key" aria-label="Line key"></div>
         <p><b>How the list was made.</b> Stories were crawled from newyorker.com’s fiction archive. Word counts come from each story’s page and run a few percent high; reading time assumes 240 words a minute. Every piece under 2,500 words was reviewed from its opening lines, and the humor sketches, parodies, essays, poems and cartoon features the archive files as fiction were removed. The list starts in 1940, because before then the archive labels nearly every humor piece as fiction. It also leaves out flash fiction, meaning pieces of 1,000 words or fewer (the ceiling flash journals like SmokeLong Quarterly and Wigleaf use), and the magazine’s online Flash Fiction series. Known fiction writers are the exception: nothing of theirs is removed for length or by the review.</p>
         <p><b>Fiction writer</b> marks authors known mainly for novels or short stories: anyone with a story here from 1993 on, when the magazine began running humor separately as Shouts &amp; Murmurs, plus older authors identified by name. Some archive stories have only a summary online, so their length is unknown; they ride the grey line. If something slipped through that isn’t a story, use Hide.</p>
+        <p><b>Story Club</b> marks the New Yorker stories George Saunders has taught on his Substack, <a href="https://georgesaunders.substack.com" target="_blank" rel="noopener">Story Club</a>. The tag links to the post.</p>
         <p><a href="/new_yorker_stories_by_word_count.csv" download>Download the full list as a spreadsheet (CSV)</a>. Set in TeX Gyre Heros (GUST Font License). Not affiliated with The New Yorker or Condé Nast.</p>
       </div>
     </footer>
@@ -280,10 +284,10 @@
 
       function scoped() {
         const q = $("q").value.trim().toLowerCase(), dec = $("decade").value;
-        const fo = $("fictionOnly").checked, mo = $("modern").checked;
+        const fo = $("fictionOnly").checked, mo = $("modern").checked, sc = $("club").checked;
         return DATA.filter((s) =>
           (!dec || Math.floor(s.y / 10) * 10 == dec) &&
-          (!fo || s.f === "F") && (!mo || s.y >= 1993) &&
+          (!fo || s.f === "F") && (!mo || s.y >= 1993) && (!sc || s.c) &&
           (showHidden ? hidden.has(s.p) : !hidden.has(s.p)) &&
           (!q || s.lc.includes(q)));
       }
@@ -305,12 +309,14 @@
           LINES.map((l) => `<button class="line${counts[l.id] ? "" : " zero"}" type="button" data-l="${l.id}" aria-pressed="${line === l.id}"><span class="bullet sm ${l.id}" aria-hidden="true"></span>${l.label} <span class="n">${fmt(counts[l.id] || 0)}</span></button>`).join("");
       }
 
+      const clubTag = (s) => s.c ? `<a class="tag" href="https://georgesaunders.substack.com/p/${esc(s.c[1])}" target="_blank" rel="noopener" title="Taught on Story Club">Story Club</a>` : "";
+
       function row(s) {
         return `<li class="stop" data-p="${esc(s.p)}" data-w="${s.w ?? ""}">
           ${bullet(s)}
           <div class="body">
             <a class="t" href="https://www.newyorker.com${esc(s.p)}" target="_blank" rel="noopener">${esc(s.t)}</a>
-            <div class="by"><span>${esc(s.a || "Unknown author")} ·</span><span class="nw">${date(s.d)}</span>${s.f === "F" ? '<span class="tag" title="Known mainly for novels or short stories">Fiction writer</span>' : ""}<button class="hide" type="button">${hidden.has(s.p) ? "Unhide" : "Hide"}</button></div>
+            <div class="by"><span>${esc(s.a || "Unknown author")} ·</span><span class="nw">${date(s.d)}</span>${s.f === "F" ? '<span class="tag" title="Known mainly for novels or short stories">Fiction writer</span>' : ""}${clubTag(s)}<button class="hide" type="button">${hidden.has(s.p) ? "Unhide" : "Hide"}</button></div>
             ${s.k ? `<p class="dek">${esc(s.k)}</p>` : ""}
           </div>
           <div class="len">
@@ -393,7 +399,7 @@
       function reset() { shown = PAGE; render(); }
 
       function clearAll() {
-        $("q").value = ""; $("decade").value = ""; $("fictionOnly").checked = false; $("modern").checked = false;
+        $("q").value = ""; $("decade").value = ""; $("fictionOnly").checked = false; $("modern").checked = false; $("club").checked = false;
         line = "all"; store.set("line", line); reset(); $("q").focus();
       }
 
@@ -422,7 +428,7 @@
         const b = e.target.closest(".line"); if (!b) return;
         line = b.dataset.l; store.set("line", line); reset();
       });
-      ["q", "decade", "sort", "fictionOnly", "modern"].forEach((id) => $(id).addEventListener("input", reset));
+      ["q", "decade", "sort", "fictionOnly", "modern", "club"].forEach((id) => $(id).addEventListener("input", reset));
       $("pick").addEventListener("click", doPick);
       $("more").addEventListener("click", () => { shown += PAGE; render(); });
       $("showHidden").addEventListener("click", () => { showHidden = !showHidden; hiddenLink(); reset(); });
@@ -442,7 +448,7 @@
 
       fetch("/data.json").then((r) => r.json()).then((rows) => {
         DATA = rows.map((r) => {
-          const s = { t: r[0], a: r[1], y: r[2], d: r[3], w: r[4], p: r[5], k: r[6], f: r[7], lc: (r[0] + " " + r[1]).toLowerCase() };
+          const s = { t: r[0], a: r[1], y: r[2], d: r[3], w: r[4], p: r[5], k: r[6], f: r[7], c: r[8], lc: (r[0] + " " + r[1]).toLowerCase() };
           s.line = lineOf(s.w);
           return s;
         });

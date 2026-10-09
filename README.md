@@ -28,6 +28,8 @@ Python 3, standard library only. Cached crawl results live in `pipeline/data/`, 
 | `build.py` | Applies every filter and writes `public/data.json` and the CSV. |
 | `scrape.py` | Writing Atlas's New Yorker list, used as a cross-check. |
 
+`pipeline/data/story_club.json` lists the New Yorker stories George Saunders discusses on his Substack, Story Club, with the post where each comes up. Only those marked `taught` reach the site, where they drive the "Discussed in Story Club" filter; the `recommended` and `own` entries are passing mentions kept for reference.
+
 `pipeline/data/judgments/` holds review verdicts. `a*/b*.out.tsv` mark each piece under 2,500 words as story (S) or not (N), judged from its opening lines. `auth*.out.tsv` label authors as fiction writers (F), humorists/journalists/poets (H) or unknown (U).
 
 ### What's excluded
