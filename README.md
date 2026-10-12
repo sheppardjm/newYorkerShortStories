@@ -1,6 +1,6 @@
 # New Yorker Fiction by Length
 
-Every New Yorker short story since 1940, ranked by word count, with a link to each story on newyorker.com. Built for reading one story a day: filter by length, decade, or "known fiction writers," pick a random unread one, and check stories off as you read them (saved in your browser).
+Every New Yorker short story since 1940, ranked by word count, with a link to each story on newyorker.com. Built for reading one story a day: filter by length, decade, author's country, or "known fiction writers," pick a random unread one, and check stories off as you read them (saved in your browser).
 
 ## Site
 
@@ -25,10 +25,13 @@ Python 3, standard library only. Cached crawl results live in `pipeline/data/`, 
 | `classify.py` | For short pieces, fetches body details used to spot poems, cartoon features and summary-only archive pages. |
 | `rules.py` | Heuristics for those categories. |
 | `authors.py` | Prepares the author list for labeling. |
+| `nationality.py` | Looks up each author's country of citizenship and ethnic group on Wikidata (bulk SPARQL, then the search API for the rest), cached in `data/wd_authors.json`. Writes `data/nationality_auto.json`. |
 | `build.py` | Applies every filter and writes `public/data.json` and the CSV. |
 | `scrape.py` | Writing Atlas's New Yorker list, used as a cross-check. |
 
 `pipeline/data/story_club.json` lists the New Yorker stories George Saunders discusses on his Substack, Story Club, with the post where each comes up. Only those marked `taught` reach the site, where they drive the "Discussed in Story Club" filter; the `recommended` and `own` entries are passing mentions kept for reference.
+
+`pipeline/data/nationality_overrides.json` holds hand corrections to the Wikidata lookup: wrong namesakes, trimmed citizenship lists, authors Wikidata lacks, and Indigenous writers with their nation or people (the `heritage` field, which drives the "Indigenous writers" filter). Its `_countries` map turns historical state names (Russian Empire, British Raj, Kingdom of Italy) into the name shown on the site.
 
 `pipeline/data/judgments/` holds review verdicts. `a*/b*.out.tsv` mark each piece under 2,500 words as story (S) or not (N), judged from its opening lines. `auth*.out.tsv` label authors as fiction writers (F), humorists/journalists/poets (H) or unknown (U).
 

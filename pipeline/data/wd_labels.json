@@ -1,0 +1,1166 @@
+{
+"Q16": {
+"label": "Canada",
+"desc": "country in North America",
+"P17": [
+"Q16"
+]
+},
+"Q17": {
+"label": "Japan",
+"desc": "island country in East Asia",
+"P17": [
+"Q17"
+]
+},
+"Q20": {
+"label": "Norway",
+"desc": "country in Northern Europe",
+"P17": [
+"Q20"
+]
+},
+"Q27": {
+"label": "Ireland",
+"desc": "country in Northwestern Europe",
+"P17": [
+"Q27"
+]
+},
+"Q28": {
+"label": "Hungary",
+"desc": "country in Central Europe",
+"P17": [
+"Q28"
+]
+},
+"Q29": {
+"label": "Spain",
+"desc": "country in southwestern Europe with territories in Africa",
+"P17": [
+"Q29"
+]
+},
+"Q30": {
+"label": "United States",
+"desc": "country located primarily in North America",
+"P17": [
+"Q30"
+]
+},
+"Q31": {
+"label": "Belgium",
+"desc": "country in western Europe",
+"P17": [
+"Q31"
+]
+},
+"Q34": {
+"label": "Sweden",
+"desc": "country in Northern Europe",
+"P17": []
+},
+"Q35": {
+"label": "Denmark",
+"desc": "country in Northern Europe",
+"P17": [
+"Q756617"
+]
+},
+"Q36": {
+"label": "Poland",
+"desc": "country in Central Europe",
+"P17": [
+"Q36"
+]
+},
+"Q38": {
+"label": "Italy",
+"desc": "country in southern Europe",
+"P17": [
+"Q38"
+]
+},
+"Q39": {
+"label": "Switzerland",
+"desc": "country in Central Europe",
+"P17": []
+},
+"Q40": {
+"label": "Austria",
+"desc": "country in Central Europe",
+"P17": [
+"Q40"
+]
+},
+"Q41": {
+"label": "Greece",
+"desc": "country in Southeast Europe",
+"P17": [
+"Q41"
+]
+},
+"Q43": {
+"label": "Turkey",
+"desc": "country in West Asia and Southeast Europe",
+"P17": [
+"Q43"
+]
+},
+"Q55": {
+"label": "Netherlands",
+"desc": "one of the four autonomous countries of the Kingdom of the Netherlands; with territories in the Caribbean",
+"P17": [
+"Q29999"
+]
+},
+"Q60": {
+"label": "New York City",
+"desc": "most populous city in the United States",
+"P17": [
+"Q30"
+]
+},
+"Q79": {
+"label": "Egypt",
+"desc": "country in Northeast Africa and Southwest Asia",
+"P17": [
+"Q79"
+]
+},
+"Q84": {
+"label": "London",
+"desc": "capital and largest city of England and the United Kingdom",
+"P17": [
+"Q145"
+]
+},
+"Q96": {
+"label": "Mexico",
+"desc": "country in North America",
+"P17": [
+"Q96"
+]
+},
+"Q115": {
+"label": "Ethiopia",
+"desc": "country in the Horn of Africa",
+"P17": [
+"Q115"
+]
+},
+"Q117": {
+"label": "Ghana",
+"desc": "country in West Africa",
+"P17": [
+"Q117"
+]
+},
+"Q142": {
+"label": "France",
+"desc": "country in Western Europe and other continents (through its overseas territories in America, Africa and Oceania)",
+"P17": [
+"Q142"
+]
+},
+"Q145": {
+"label": "United Kingdom",
+"desc": "island country in north-west Europe",
+"P17": [
+"Q145"
+]
+},
+"Q148": {
+"label": "People's Republic of China",
+"desc": "country in East Asia",
+"P17": [
+"Q148"
+]
+},
+"Q155": {
+"label": "Brazil",
+"desc": "country in South America",
+"P17": [
+"Q155"
+]
+},
+"Q159": {
+"label": "Russia",
+"desc": "country in Eastern Europe and Northern Asia, the largest in the world by area",
+"P17": [
+"Q159"
+]
+},
+"Q183": {
+"label": "Germany",
+"desc": "country in Central Europe",
+"P17": [
+"Q183"
+]
+},
+"Q184": {
+"label": "Belarus",
+"desc": "country in Eastern Europe",
+"P17": [
+"Q184"
+]
+},
+"Q189": {
+"label": "Iceland",
+"desc": "Nordic island country in the North Atlantic Ocean",
+"P17": [
+"Q189"
+]
+},
+"Q211": {
+"label": "Latvia",
+"desc": "sovereign state in northeastern Europe",
+"P17": [
+"Q211"
+]
+},
+"Q212": {
+"label": "Ukraine",
+"desc": "country in Eastern Europe",
+"P17": [
+"Q212"
+]
+},
+"Q213": {
+"label": "Czech Republic",
+"desc": "country in Central Europe",
+"P17": [
+"Q213"
+]
+},
+"Q218": {
+"label": "Romania",
+"desc": "country in Southeast Europe",
+"P17": [
+"Q218"
+]
+},
+"Q222": {
+"label": "Albania",
+"desc": "country in southeastern Europe",
+"P17": [
+"Q222"
+]
+},
+"Q225": {
+"label": "Bosnia and Herzegovina",
+"desc": "country in Southeast Europe",
+"P17": []
+},
+"Q239": {
+"label": "Brussels",
+"desc": "municipality in the Brussels-Capital Region and capital of Belgium",
+"P17": [
+"Q31"
+]
+},
+"Q241": {
+"label": "Cuba",
+"desc": "sovereign state situated on an island in the Caribbean Sea",
+"P17": [
+"Q241"
+]
+},
+"Q258": {
+"label": "South Africa",
+"desc": "country in southern Africa",
+"P17": [
+"Q258"
+]
+},
+"Q262": {
+"label": "Algeria",
+"desc": "country in North Africa",
+"P17": [
+"Q262"
+]
+},
+"Q298": {
+"label": "Chile",
+"desc": "country in South America and Oceania, with a claim in Antarctica",
+"P17": [
+"Q298"
+]
+},
+"Q334": {
+"label": "Singapore",
+"desc": "sovereign island country and city-state in maritime Southeast Asia",
+"P17": [
+"Q334"
+]
+},
+"Q403": {
+"label": "Serbia",
+"desc": "country in Southeast Europe",
+"P17": [
+"Q403"
+]
+},
+"Q408": {
+"label": "Australia",
+"desc": "country in Oceania",
+"P17": [
+"Q408"
+]
+},
+"Q414": {
+"label": "Argentina",
+"desc": "country in South America",
+"P17": [
+"Q414"
+]
+},
+"Q419": {
+"label": "Peru",
+"desc": "sovereign state in South America",
+"P17": [
+"Q419"
+]
+},
+"Q580": {
+"label": "Łódź",
+"desc": "city in Łódź Voivodeship in central Poland",
+"P17": [
+"Q36"
+]
+},
+"Q585": {
+"label": "Oslo",
+"desc": "capital city of Norway",
+"P17": [
+"Q20"
+]
+},
+"Q664": {
+"label": "New Zealand",
+"desc": "island country in the southwest Pacific Ocean",
+"P17": [
+"Q664"
+]
+},
+"Q668": {
+"label": "India",
+"desc": "country in South Asia",
+"P17": [
+"Q668"
+]
+},
+"Q686": {
+"label": "Vanuatu",
+"desc": "island country in Oceania",
+"P17": [
+"Q686"
+]
+},
+"Q739": {
+"label": "Colombia",
+"desc": "country in South America",
+"P17": [
+"Q739"
+]
+},
+"Q750": {
+"label": "Bolivia",
+"desc": "sovereign state in South America",
+"P17": [
+"Q750"
+]
+},
+"Q754": {
+"label": "Trinidad and Tobago",
+"desc": "island sovereign state in the Caribbean",
+"P17": [
+"Q754"
+]
+},
+"Q771": {
+"label": "Massachusetts",
+"desc": "state of the United States of America",
+"P17": [
+"Q30"
+]
+},
+"Q781": {
+"label": "Antigua and Barbuda",
+"desc": "island sovereign state in the Caribbean Sea",
+"P17": []
+},
+"Q784": {
+"label": "Dominica",
+"desc": "island sovereign state in the Caribbean Sea",
+"P17": [
+"Q784"
+]
+},
+"Q786": {
+"label": "Dominican Republic",
+"desc": "island sovereign state in the Caribbean Sea",
+"P17": [
+"Q786"
+]
+},
+"Q790": {
+"label": "Haiti",
+"desc": "country in the Caribbean Sea",
+"P17": [
+"Q790"
+]
+},
+"Q794": {
+"label": "Iran",
+"desc": "country in Western Asia",
+"P17": [
+"Q794"
+]
+},
+"Q801": {
+"label": "Israel",
+"desc": "country in West Asia",
+"P17": [
+"Q801"
+]
+},
+"Q804": {
+"label": "Panama",
+"desc": "sovereign state in Central America",
+"P17": [
+"Q804"
+]
+},
+"Q843": {
+"label": "Pakistan",
+"desc": "sovereign state in South Asia",
+"P17": [
+"Q843"
+]
+},
+"Q854": {
+"label": "Sri Lanka",
+"desc": "island country in South Asia",
+"P17": [
+"Q854"
+]
+},
+"Q869": {
+"label": "Thailand",
+"desc": "country in Southeast Asia",
+"P17": []
+},
+"Q881": {
+"label": "Vietnam",
+"desc": "country in Southeast Asia",
+"P17": [
+"Q881"
+]
+},
+"Q884": {
+"label": "South Korea",
+"desc": "country in East Asia",
+"P17": [
+"Q884"
+]
+},
+"Q900": {
+"label": "Kazan",
+"desc": "city in the Republic of Tatarstan, Russia",
+"P17": [
+"Q159"
+]
+},
+"Q902": {
+"label": "Bangladesh",
+"desc": "country in South Asia",
+"P17": [
+"Q902"
+]
+},
+"Q928": {
+"label": "Philippines",
+"desc": "archipelagic country in Southeast Asia",
+"P17": [
+"Q928"
+]
+},
+"Q953": {
+"label": "Zambia",
+"desc": "country at the crossroads of Central and Southern Africa",
+"P17": [
+"Q953"
+]
+},
+"Q954": {
+"label": "Zimbabwe",
+"desc": "sovereign state in southern Africa",
+"P17": [
+"Q954"
+]
+},
+"Q1009": {
+"label": "Cameroon",
+"desc": "sovereign state in West-Central Africa",
+"P17": [
+"Q1009"
+]
+},
+"Q1016": {
+"label": "Libya",
+"desc": "sovereign state in North Africa",
+"P17": [
+"Q1016"
+]
+},
+"Q1027": {
+"label": "Mauritius",
+"desc": "island sovereign state off of East Africa in the Indian Ocean",
+"P17": [
+"Q1027"
+]
+},
+"Q1028": {
+"label": "Morocco",
+"desc": "sovereign state in North Africa",
+"P17": [
+"Q1028"
+]
+},
+"Q1033": {
+"label": "Nigeria",
+"desc": "sovereign state in West Africa",
+"P17": [
+"Q1033"
+]
+},
+"Q1037": {
+"label": "Rwanda",
+"desc": "country in East Africa",
+"P17": [
+"Q1037"
+]
+},
+"Q1045": {
+"label": "Somalia",
+"desc": "sovereign state in Africa",
+"P17": [
+"Q1045"
+]
+},
+"Q1085": {
+"label": "Prague",
+"desc": "capital city of the Czech Republic",
+"P17": [
+"Q213"
+]
+},
+"Q1156": {
+"label": "Mumbai",
+"desc": "capital city in Maharashtra, India",
+"P17": [
+"Q668"
+]
+},
+"Q1246": {
+"label": "Kosovo",
+"desc": "country in southeastern Europe",
+"P17": [
+"Q1246"
+]
+},
+"Q1345": {
+"label": "Philadelphia",
+"desc": "largest city in the U.S. state of Pennsylvania and seat of Philadelphia County",
+"P17": [
+"Q30"
+]
+},
+"Q1461": {
+"label": "Manila",
+"desc": "capital city of the Philippines",
+"P17": [
+"Q928"
+]
+},
+"Q1731": {
+"label": "Dresden",
+"desc": "capital city of the Free State of Saxony in Germany",
+"P17": [
+"Q183"
+]
+},
+"Q1741": {
+"label": "Vienna",
+"desc": "capital of and state in Austria",
+"P17": [
+"Q40"
+]
+},
+"Q1761": {
+"label": "Dublin",
+"desc": "capital and largest city of Ireland",
+"P17": [
+"Q27"
+]
+},
+"Q4656": {
+"label": "Pula",
+"desc": "city and settlement in Istria County, Croatia",
+"P17": [
+"Q224"
+]
+},
+"Q7325": {
+"label": "Jewish people",
+"desc": "ethnoreligious group and nation from the Levant",
+"P17": [
+"Q801"
+]
+},
+"Q8684": {
+"label": "Seoul",
+"desc": "capital and largest city of South Korea",
+"P17": [
+"Q884"
+]
+},
+"Q8733": {
+"label": "Qing dynasty",
+"desc": "Manchu-led dynasty of China (1644–1912)",
+"P17": []
+},
+"Q11299": {
+"label": "Manhattan",
+"desc": "borough of New York City, New York, United States",
+"P17": [
+"Q30"
+]
+},
+"Q12439": {
+"label": "Detroit",
+"desc": "city in and county seat of Wayne County, and largest city in State of Michigan, United States",
+"P17": [
+"Q30"
+]
+},
+"Q15180": {
+"label": "Soviet Union",
+"desc": "former country in Eurasia (1922–1991)",
+"P17": [
+"Q15180"
+]
+},
+"Q18419": {
+"label": "Brooklyn",
+"desc": "borough of New York City, New York, United States",
+"P17": [
+"Q30"
+]
+},
+"Q18426": {
+"label": "The Bronx",
+"desc": "borough of New York City, New York, United States",
+"P17": [
+"Q30"
+]
+},
+"Q19660": {
+"label": "Bucharest",
+"desc": "capital and largest city of Romania",
+"P17": [
+"Q218"
+]
+},
+"Q25395": {
+"label": "Newark",
+"desc": "city in Essex County, and largest city in New Jersey, United States",
+"P17": [
+"Q30"
+]
+},
+"Q25610": {
+"label": "Hampstead",
+"desc": "area of north London, England",
+"P17": [
+"Q145"
+]
+},
+"Q28513": {
+"label": "Austria–Hungary",
+"desc": "1867–1918 empire in Central Europe",
+"P17": [
+"Q28513"
+]
+},
+"Q29245": {
+"label": "Hastings",
+"desc": "town in East Sussex, on the south coast of England",
+"P17": [
+"Q145"
+]
+},
+"Q29999": {
+"label": "Kingdom of the Netherlands",
+"desc": "transcontinental sovereign state and constitutional monarchy",
+"P17": [
+"Q29999"
+]
+},
+"Q31747": {
+"label": "Irish Free State",
+"desc": "state on the island of Ireland between December 1922 and December 1937",
+"P17": []
+},
+"Q33946": {
+"label": "Czechoslovakia",
+"desc": "country in Central Europe (1918–1992)",
+"P17": [
+"Q33946"
+]
+},
+"Q34266": {
+"label": "Russian Empire",
+"desc": "former empire in Eurasia and North America (1721–1917)",
+"P17": [
+"Q34266"
+]
+},
+"Q36036": {
+"label": "Lviv",
+"desc": "capital city of Lviv Oblast in western Ukraine",
+"P17": [
+"Q212"
+]
+},
+"Q38022": {
+"label": "St. Louis",
+"desc": "independent city in Missouri, United States",
+"P17": [
+"Q30"
+]
+},
+"Q42152": {
+"label": "Tongyeong",
+"desc": "city in South Korea",
+"P17": [
+"Q884"
+]
+},
+"Q42406": {
+"label": "English people",
+"desc": "citizens or residents of England",
+"P17": [
+"Q145"
+]
+},
+"Q42884": {
+"label": "Germans",
+"desc": "residents and citizens of Germany & people of German descent",
+"P17": [
+"Q347"
+]
+},
+"Q49085": {
+"label": "African Americans",
+"desc": "Americans with sub-Saharan African ancestry",
+"P17": [
+"Q30"
+]
+},
+"Q83286": {
+"label": "Socialist Federal Republic of Yugoslavia",
+"desc": "Central and Southeast European socialist state (1945–1992)",
+"P17": [
+"Q83286"
+]
+},
+"Q128147": {
+"label": "Kingston upon Hull",
+"desc": "city in the East Riding of Yorkshire, England, UK",
+"P17": [
+"Q179876"
+]
+},
+"Q129286": {
+"label": "British Raj",
+"desc": "British colonial rule on the Indian subcontinent (1858–1947)",
+"P17": [
+"Q8680"
+]
+},
+"Q139319": {
+"label": "Russian Republic",
+"desc": "Sep 1917 – Oct 1917 short-lived republic in Eurasia",
+"P17": [
+"Q139319"
+]
+},
+"Q157725": {
+"label": "Chernivtsi",
+"desc": "capital city of Chernivtsi Oblast in western Ukraine and historical center of the Bukovina",
+"P17": [
+"Q212"
+]
+},
+"Q167155": {
+"label": "Kalamazoo",
+"desc": "county seat of Kalamazoo County, Michigan, United States",
+"P17": [
+"Q30"
+]
+},
+"Q171150": {
+"label": "Kingdom of Hungary",
+"desc": "Central European monarchy (1000–1946)",
+"P17": [
+"Q171150"
+]
+},
+"Q172579": {
+"label": "Kingdom of Italy",
+"desc": "kingdom in Southern Europe from 1861 to 1946",
+"P17": []
+},
+"Q174193": {
+"label": "United Kingdom of Great Britain and Ireland",
+"desc": "historical sovereign state (1801–1922)",
+"P17": [
+"Q174193"
+]
+},
+"Q179248": {
+"label": "Albanians",
+"desc": "citizens or residents of Albania and ethnic group",
+"P17": [
+"Q1255"
+]
+},
+"Q179876": {
+"label": "Kingdom of England",
+"desc": "historic kingdom on the British Isles (927–1649; 1660–1707)",
+"P17": []
+},
+"Q180573": {
+"label": "South Vietnam",
+"desc": "former state in Southeast Asia",
+"P17": [
+"Q881"
+]
+},
+"Q188712": {
+"label": "Empire of Japan",
+"desc": "empire in the Asia-Pacific region from 1868 to 1947",
+"P17": [
+"Q17"
+]
+},
+"Q191077": {
+"label": "Kingdom of Yugoslavia",
+"desc": "the official name of Yugoslavia during the period of 1929–1941 (de facto)/1945 (de jure)",
+"P17": [
+"Q191077"
+]
+},
+"Q207272": {
+"label": "Second Polish Republic",
+"desc": "country in Central and Eastern Europe (1918–1945)",
+"P17": [
+"Q207272"
+]
+},
+"Q208545": {
+"label": "Socialist Republic of Bosnia and Herzegovina",
+"desc": "federated state of Bosnia and Herzegovina within Yugoslavia from 1943 to 1992",
+"P17": [
+"Q83286"
+]
+},
+"Q215530": {
+"label": "Kingdom of Ireland",
+"desc": "kingdom on the island of Ireland between 1542 and 1801",
+"P17": [
+"Q215530"
+]
+},
+"Q216173": {
+"label": "Free City of Danzig",
+"desc": "semi-autonomous city-state that existed between 1920 and 1939",
+"P17": [
+"Q216173"
+]
+},
+"Q219060": {
+"label": "Palestine",
+"desc": "political entity that enjoys incomplete recognition as a state, located in West Asia",
+"P17": [
+"Q219060"
+]
+},
+"Q223050": {
+"label": "statelessness",
+"desc": "status of a person who is not a citizen/national of any country",
+"P17": []
+},
+"Q241696": {
+"label": "Somalis",
+"desc": "Horner ethnic group who are descendants of ancient Puntites",
+"P17": [
+"Q1045"
+]
+},
+"Q243610": {
+"label": "Ukrainian People's Republic",
+"desc": "country in Eastern Europe (1917–1921); government in exile (1921–1992)",
+"P17": [
+"Q139319"
+]
+},
+"Q244157": {
+"label": "Igbo people",
+"desc": "ethnic group of southeastern Nigeria",
+"P17": [
+"Q1033"
+]
+},
+"Q255872": {
+"label": "Ojibwe",
+"desc": "group of indigenous peoples in North America",
+"P17": [
+"Q30"
+]
+},
+"Q265827": {
+"label": "Scottsville",
+"desc": "village in Monroe County, New York, United States",
+"P17": [
+"Q30"
+]
+},
+"Q276879": {
+"label": "Korean Americans",
+"desc": "ethnic group; Americans of Korean ancestry",
+"P17": []
+},
+"Q372304": {
+"label": "Adrian",
+"desc": "city in Michigan, United States",
+"P17": [
+"Q30"
+]
+},
+"Q457167": {
+"label": "West Ukrainian People's Republic",
+"desc": "self-proclaimed 1918-1919 country in Eastern Europe",
+"P17": [
+"Q457167"
+]
+},
+"Q462799": {
+"label": "Evanston",
+"desc": "suburban city in Cook County, Illinois, United States",
+"P17": [
+"Q30"
+]
+},
+"Q489255": {
+"label": "Sioux City",
+"desc": "city in Woodbury and Plymouth counties in Iowa, United States",
+"P17": [
+"Q30"
+]
+},
+"Q533534": {
+"label": "Cisleithania",
+"desc": "northern and western part of Austro-Hungary with Dalmatia and Istria (1867–1918)",
+"P17": [
+"Q28513"
+]
+},
+"Q537803": {
+"label": "Florida",
+"desc": "village in Monroe County, Missouri, United States",
+"P17": [
+"Q30"
+]
+},
+"Q643160": {
+"label": "Farnham",
+"desc": "town in Surrey, England, UK",
+"P17": [
+"Q145"
+]
+},
+"Q678551": {
+"label": "American Jews",
+"desc": "community in the United States",
+"P17": []
+},
+"Q696242": {
+"label": "Wang Jingwei regime",
+"desc": "Chinese puppet government under the Empire of Japan; existed from 1940 to 1945",
+"P17": [
+"Q13426199"
+]
+},
+"Q708865": {
+"label": "Reformed Government of the Republic of China",
+"desc": "puppet government controlled by Japan",
+"P17": [
+"Q13426199"
+]
+},
+"Q756617": {
+"label": "Kingdom of Denmark",
+"desc": "transcontinental sovereign state and constitutional monarchy",
+"P17": []
+},
+"Q773527": {
+"label": "Winona",
+"desc": "city and the county seat of Winona County, Minnesota, United States",
+"P17": [
+"Q30"
+]
+},
+"Q876191": {
+"label": "Peekskill",
+"desc": "city in Westchester County, New York, United States",
+"P17": [
+"Q30"
+]
+},
+"Q939610": {
+"label": "Unnao",
+"desc": "city and headquarters of Unnao District in Uttar Pradesh, India",
+"P17": [
+"Q668"
+]
+},
+"Q1020014": {
+"label": "Lancing",
+"desc": "village and civil parish in West Sussex, England",
+"P17": [
+"Q145"
+]
+},
+"Q1086276": {
+"label": "Irvington",
+"desc": "township in Essex County, New Jersey, United States",
+"P17": [
+"Q30"
+]
+},
+"Q1181009": {
+"label": "Tyrone",
+"desc": "borough in Blair County, Pennsylvania, United States",
+"P17": [
+"Q30"
+]
+},
+"Q1193808": {
+"label": "Norwegian Americans",
+"desc": "ethnic group; Americans of Norwegian birth or descent",
+"P17": [
+"Q30"
+]
+},
+"Q1206012": {
+"label": "German Reich",
+"desc": "official name for the German nation state from 1871 to 1945, and name of Germany until 1949",
+"P17": [
+"Q1206012"
+]
+},
+"Q1775277": {
+"label": "Dominion of India",
+"desc": "period of Indian history between 1947 and 1950",
+"P17": [
+"Q145"
+]
+},
+"Q1843815": {
+"label": "Foxrock",
+"desc": "suburb of Dublin, Ireland",
+"P17": [
+"Q27"
+]
+},
+"Q2305208": {
+"label": "Russian Socialist Federative Soviet Republic",
+"desc": "1918–1922 sovereign state in Eurasia",
+"P17": [
+"Q2305208"
+]
+},
+"Q2423149": {
+"label": "South Hadley",
+"desc": "town in Hampshire County, Massachusetts, United States",
+"P17": [
+"Q30"
+]
+},
+"Q2993629": {
+"label": "Urhobo people",
+"desc": "Ethnic group in southern Nigeria",
+"P17": [
+"Q1033"
+]
+},
+"Q3100242": {
+"label": "Due West",
+"desc": "human settlement in Abbeville County, South Carolina, United States of America",
+"P17": [
+"Q30"
+]
+},
+"Q4172847": {
+"label": "Filipinos",
+"desc": "people native to or citizens of the Philippines",
+"P17": [
+"Q928"
+]
+},
+"Q5025138": {
+"label": "Cambodian Americans",
+"desc": "Americans of Cambodian ancestry",
+"P17": []
+},
+"Q6500483": {
+"label": "Nguyen dynasty",
+"desc": "imperial Vietnamese dynasty, 1802-1945",
+"P17": []
+},
+"Q7125803": {
+"label": "Pakistani Americans",
+"desc": "ethnic group; Americans of Pakistani birth or descent",
+"P17": []
+},
+"Q13426199": {
+"label": "Republic of China",
+"desc": "1912–1949 country in Asia",
+"P17": [
+"Q13426199"
+]
+},
+"Q1255": {
+"label": "Kosovo and Metohija",
+"desc": "",
+"P17": []
+},
+"Q224": {
+"label": "Croatia",
+"desc": "",
+"P17": []
+},
+"Q347": {
+"label": "Liechtenstein",
+"desc": "",
+"P17": []
+},
+"Q8680": {
+"label": "British Empire",
+"desc": "",
+"P17": []
+}
+}

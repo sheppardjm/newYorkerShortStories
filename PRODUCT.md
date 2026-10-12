@@ -29,11 +29,12 @@ The magazine's own archive files many humor pieces, poems, cartoon features and 
 
 - Static Astro site on Netlify. No backend, no accounts.
 - 6,820 stories from 1940 to now, plus 111 marked "Length unknown" (the archive has only a summary online).
-- Filters: length bands, decade, search by title or author, sort order, "Known fiction writers only", "1993 and later". "Pick one for today" gives a random story within the current filters. Each row has a "Hide" link (per browser) for misfiled pieces, and the full list downloads as a CSV.
+- Filters: length bands, decade, author's country, search by title or author, sort order, "Known fiction writers only", "1993 and later", "Discussed in Story Club", "Indigenous writers". "Pick one for today" gives a random story within the current filters. Each row has a "Hide" link (per browser) for misfiled pieces, and the full list downloads as a CSV.
 - Excluded by the owner's choice: anything before 1940, flash fiction of 1,000 words or fewer (the ceiling SmokeLong Quarterly, Wigleaf and Best Small Fictions use; except Saroyan's "A Fresno Fable"), the online Flash Fiction series, poems, cartoon features, and humor/parody/essay pieces. Known fiction writers are exempt from the flash cutoff and the humor review, by the owner's rule.
 - Read checkmarks have been removed at the owner's request. There's no per-story read tracking or read-based filtering. Cross-device sync is not wanted.
+- Author country comes from Wikidata citizenship, with hand corrections; about 8% of stories (mostly obscure mid-century contributors) have no country and show under "Country unknown". Indigenous writers (four so far) are tagged by nation or people from their published biographies.
 - Word counts come from newyorker.com page metadata and run a few percent high. Story-versus-humor labels are judgment calls; some misfiles remain.
-- Terminology: "word count", "reading time" (240 words per minute), "known fiction writer", "length unknown".
+- Terminology: "word count", "reading time" (240 words per minute), "known fiction writer", "length unknown", "country" (of citizenship), "Indigenous writers".
 
 ## Brand Commitments
 

@@ -59,9 +59,25 @@ club={k:v for k,v in json.load(open('story_club.json')).items() if not k.startsw
 for r in rows: c=club.get(r[5]); r.append([c['kind'],c['post']] if c else 0)
 missing=set(club)-{r[5] for r in rows}
 if missing: print('story_club.json paths not in the list:', sorted(missing))
+# Author nationality: Wikidata lookup (nationality.py) with hand corrections on top
+nat=json.load(open('nationality_auto.json')) if os.path.exists('nationality_auto.json') else {}
+natfix=json.load(open('nationality_overrides.json')) if os.path.exists('nationality_overrides.json') else {}
+CANON=natfix.pop('_countries',{})  # historical or long-form state names -> the name shown on the site
+def countries(a):
+    o=natfix.get(a)
+    cs=o['countries'] if o and 'countries' in o else nat.get(a,{}).get('countries',[])
+    out=[]
+    for c in cs:
+        c=CANON.get(c,c)
+        if c and c not in out: out.append(c)
+    return out
+def heritage(a):
+    o=natfix.get(a)
+    return (o or {}).get('heritage','') or ''
+for r in rows: a=mainauth(r[1]); r.append(countries(a)); r.append(heritage(a))
 rows.sort(key=lambda r:(r[4] is None, r[4] or 0, r[3]))
 json.dump(rows,open('../../public/data.json','w'),ensure_ascii=False,separators=(',',':'))
 with open('../../public/new_yorker_stories_by_word_count.csv','w',newline='') as f:
-    wr=csv.writer(f); wr.writerow(['rank','words','title','author','known_fiction_writer','issue_date','url','summary','story_club'])
-    for i,r in enumerate(rows,1): wr.writerow([i if r[4] else '',r[4] or 'unknown (archive scan only)',r[0],r[1],{'F':'yes','H':'no'}.get(r[7],'unknown'),r[3],'https://www.newyorker.com'+r[5],r[6],r[8][0] if r[8] else ''])
+    wr=csv.writer(f); wr.writerow(['rank','words','title','author','known_fiction_writer','author_country','indigenous_nation','issue_date','url','summary','story_club'])
+    for i,r in enumerate(rows,1): wr.writerow([i if r[4] else '',r[4] or 'unknown (archive scan only)',r[0],r[1],{'F':'yes','H':'no'}.get(r[7],'unknown'),' / '.join(r[9]),r[10],r[3],'https://www.newyorker.com'+r[5],r[6],r[8][0] if r[8] else ''])
 print(dropped, len(rows), 'unknown', sum(1 for r in rows if r[4] is None))

@@ -1,0 +1,856 @@
+{
+  "_about": "Hand corrections applied on top of nationality_auto.json (Wikidata). Per author: countries (replaces the lookup) and/or heritage (Indigenous nation or people, shown as a tag). _countries maps historical or long-form state names from Wikidata to the name shown on the site.",
+  "_countries": {
+    "United States of America": "United States",
+    "United Kingdom of Great Britain and Ireland": "United Kingdom",
+    "Kingdom of Great Britain": "United Kingdom",
+    "Kingdom of England": "United Kingdom",
+    "Kingdom of Ireland": "Ireland",
+    "Irish Free State": "Ireland",
+    "Kingdom of Italy": "Italy",
+    "Kingdom of Denmark": "Denmark",
+    "Kingdom of the Netherlands": "Netherlands",
+    "People's Republic of China": "China",
+    "British Raj": "India",
+    "Dominion of India": "India",
+    "Russian Empire": "Russia",
+    "Russian Republic": "Russia",
+    "Russian Socialist Federative Soviet Republic": "Russia",
+    "Soviet Union": "Russia",
+    "Second Polish Republic": "Poland",
+    "Czechoslovakia": "Czech Republic",
+    "Free City of Danzig": "Poland",
+    "Cisleithania": "Austria",
+    "Austria–Hungary": "",
+    "West Ukrainian People's Republic": "",
+    "Ukrainian People's Republic": "",
+    "statelessness": "",
+    "German Reich": "Germany",
+    "Empire of Japan": "Japan",
+    "Socialist Republic of Bosnia and Herzegovina": "Bosnia and Herzegovina",
+    "Kingdom of Yugoslavia": "",
+    "Socialist Federal Republic of Yugoslavia": ""
+  },
+  "_wrong_matches": "Wikidata returned a namesake; set from the author's own published biography.",
+  "Winifred Williams": {
+    "countries": []
+  },
+  "Richard Osk": {
+    "countries": []
+  },
+  "Michael Hunter": {
+    "countries": []
+  },
+  "Robert McLaughlin": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Michael Campbell": {
+    "countries": [
+      "Ireland"
+    ]
+  },
+  "Robin White": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Charles Jackson": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "_cleanups": "Multiple or historical citizenships trimmed to what a reader would expect.",
+  "Bruno Schulz": {
+    "countries": [
+      "Poland"
+    ]
+  },
+  "Isaac Bashevis Singer": {
+    "countries": [
+      "Poland",
+      "United States"
+    ]
+  },
+  "Jean Rhys": {
+    "countries": [
+      "Dominica",
+      "United Kingdom"
+    ]
+  },
+  "Christine Weston": {
+    "countries": [
+      "India",
+      "United States"
+    ]
+  },
+  "Alexander Frater": {
+    "countries": [
+      "United Kingdom"
+    ]
+  },
+  "Anne Carson": {
+    "countries": [
+      "Canada"
+    ]
+  },
+  "Etgar Keret": {
+    "countries": [
+      "Israel"
+    ]
+  },
+  "Edith Templeton": {
+    "countries": [
+      "Czech Republic",
+      "United Kingdom"
+    ]
+  },
+  "Padraic Colum": {
+    "countries": [
+      "Ireland",
+      "United States"
+    ]
+  },
+  "Santha Rama Rau": {
+    "countries": [
+      "India",
+      "United States"
+    ]
+  },
+  "R. K. Narayan": {
+    "countries": [
+      "India"
+    ]
+  },
+  "Gregor Von Rezzori": {
+    "countries": [
+      "Austria",
+      "Romania"
+    ]
+  },
+  "Milan Kundera": {
+    "countries": [
+      "Czech Republic",
+      "France"
+    ]
+  },
+  "Aleksandr Solzhenitsyn": {
+    "countries": [
+      "Russia"
+    ]
+  },
+  "Ivy Litvinov": {
+    "countries": [
+      "United Kingdom",
+      "Russia"
+    ]
+  },
+  "Weike Wang": {
+    "countries": [
+      "United States",
+      "China"
+    ]
+  },
+  "Jamil Jan Kochai": {
+    "countries": [
+      "United States",
+      "Afghanistan"
+    ]
+  },
+  "Rose C. Feld": {
+    "countries": [
+      "United States",
+      "Romania"
+    ]
+  },
+  "Anne Sinclair Mehdevi": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Nika Standen Hazelton": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Richard Berczeller": {
+    "countries": [
+      "Austria",
+      "United States"
+    ]
+  },
+  "Ruth Prawer Jhabvala": {
+    "countries": [
+      "United Kingdom",
+      "United States"
+    ]
+  },
+  "Penelope Gilliatt": {
+    "countries": [
+      "United Kingdom",
+      "United States"
+    ]
+  },
+  "Aleksandar Hemon": {
+    "countries": [
+      "Bosnia and Herzegovina",
+      "United States"
+    ]
+  },
+  "Danilo Kis": {
+    "countries": [
+      "Serbia"
+    ]
+  },
+  "Ismail Kadare": {
+    "countries": [
+      "Albania"
+    ]
+  },
+  "_indigenous": "Indigenous writers, with the nation or people they are enrolled in or identify with, per their published biographies.",
+  "Louise Erdrich": {
+    "countries": [
+      "United States"
+    ],
+    "heritage": "Turtle Mountain Ojibwe"
+  },
+  "Sherman Alexie": {
+    "countries": [
+      "United States"
+    ],
+    "heritage": "Spokane / Coeur d’Alene"
+  },
+  "Tommy Orange": {
+    "countries": [
+      "United States"
+    ],
+    "heritage": "Cheyenne and Arapaho"
+  },
+  "Sterling HolyWhiteMountain": {
+    "countries": [
+      "United States"
+    ],
+    "heritage": "Blackfeet"
+  },
+  "_unmatched": "Authors Wikidata has no entry for (or no usable one), labeled from the author's published biography. Only those known with confidence; the rest stay 'Country unknown'.",
+  "Robert Henderson": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "James Reid Parker": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Louise Field Cooper": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Harry L. Mountzoures": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Elizabeth Parsons": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Mary A. Robison": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "W. E. Farbstein": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Katinka Loeser": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Ida Treat": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "John J. Espey": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "James A. Maxwell": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Mary Mian": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Calvin Kentfield": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Len Zinberg": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Robert Hemenway": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Astrid Peters": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Anna Mary Wells": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Noel Houston": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Helen Mears": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Leonard Wallace Robinson": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Mary Grimm": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Mary P. Cable": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Roy Bongartz": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Alan Sternberg": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Albert Hubbell": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "F. P. Tullius": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "John C. Mosher": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Julian Mazor": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Burton Bernstein": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Hillel Bernstein": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Jane Mankiewicz": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Janet Desaulniers": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Sarah Braunstein": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Will Mackin": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Hazel Hawthorne": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Loudon S. Wainwright": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "William Attwood": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Benedict Thielen": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Jay Mclnerney": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Ellen Cooney": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Caitlin Macy": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Zach Williams": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Addie Citchens": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Mary South": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Lillian Fishman": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Jim Gavin": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Jensen Beach": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Marc Nesbitt": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Frances Hwang": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Ella Leffland": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Ben Neihart": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Lamar Herrin": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Esther Yi": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Robert De Michiell": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Tom Hachtman": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Richard Cline": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Prudence Crowther": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Ellis Weiner": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Michael O'Donovan": {
+    "countries": [
+      "Ireland"
+    ]
+  },
+  "Mohamed Mehdevi": {
+    "countries": [
+      "Iran"
+    ]
+  },
+  "Reiko Hatsumi": {
+    "countries": [
+      "Japan"
+    ]
+  },
+  "T. Tambimuttu": {
+    "countries": [
+      "Sri Lanka"
+    ]
+  },
+  "V Naipaul": {
+    "countries": [
+      "Trinidad and Tobago",
+      "United Kingdom"
+    ]
+  },
+  "George Konrad": {
+    "countries": [
+      "Hungary"
+    ]
+  },
+  "Nicolas Nabokov": {
+    "countries": [
+      "Russia",
+      "United States"
+    ]
+  },
+  "Gilles Peress": {
+    "countries": [
+      "France"
+    ]
+  },
+  "Benoit van Innis": {
+    "countries": [
+      "Belgium"
+    ]
+  },
+  "Lyll Becerra De Jenkins": {
+    "countries": [
+      "Colombia",
+      "United States"
+    ]
+  },
+  "hurmat kazmi": {
+    "countries": [
+      "Pakistan"
+    ]
+  },
+  "Taymour Soomro": {
+    "countries": [
+      "Pakistan",
+      "United Kingdom"
+    ]
+  },
+  "A. Alvarez": {
+    "countries": [
+      "United Kingdom"
+    ]
+  },
+  "R. P. Lister": {
+    "countries": [
+      "United Kingdom"
+    ]
+  },
+  "Christopher Hollis": {
+    "countries": [
+      "United Kingdom"
+    ]
+  },
+  "Dinah Brooke": {
+    "countries": [
+      "United Kingdom"
+    ]
+  },
+  "Geoffrey Bush": {
+    "countries": [
+      "United Kingdom"
+    ]
+  },
+  "Graham Coster": {
+    "countries": [
+      "United Kingdom"
+    ]
+  },
+  "Phyllis Pearsall": {
+    "countries": [
+      "United Kingdom"
+    ]
+  },
+  "Julian Allen": {
+    "countries": [
+      "United Kingdom"
+    ]
+  },
+  "H. F. Ellis": {
+    "countries": [
+      "United Kingdom"
+    ]
+  },
+  "Jonathan Treitel": {
+    "countries": [
+      "United Kingdom"
+    ]
+  },
+  "Nigel Dennis": {
+    "countries": [
+      "United Kingdom"
+    ]
+  },
+  "John D. Stewart": {
+    "countries": [
+      "United Kingdom"
+    ]
+  },
+  "Anne Fremantle": {
+    "countries": [
+      "United Kingdom",
+      "United States"
+    ]
+  },
+  "Perdita Buchan": {
+    "countries": [
+      "United Kingdom",
+      "United States"
+    ]
+  },
+  "Danielle McLaughlin": {
+    "countries": [
+      "Ireland"
+    ]
+  },
+  "Rachel Heng": {
+    "countries": [
+      "Singapore"
+    ]
+  },
+  "Gilbert Rogin": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Berry Morgan": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Russell Maloney": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Decla Dunning": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Fred Keefe": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Lou Myers": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Veronica Geng": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "David Updike": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "James Munves": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Elinor Rice": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "David Long": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Jane Shapiro": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Stephanie Vaughn": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Charles McGrath": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "John Holman": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Mark Murphy": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Ramona Ausubel": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Vicki Covington": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Mary Louise Aswell": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Jean Boley": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Mary Tannen": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Ann Chidester": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Joseph Slate": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Katherine Bouton": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Jean Thompson": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Sadia Shepard": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Callan Wink": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Peter J. Smith": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Eugene Kinkead": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Philip Hamburger": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Mark Singer": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Frank Zachary": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Bette Pesetsky": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Norma Rosen": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Bentz Plagemann": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "Pendleton Hogan": {
+    "countries": [
+      "United States"
+    ]
+  },
+  "The New Yorker": {
+    "countries": []
+  }
+}
